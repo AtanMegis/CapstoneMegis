@@ -3,5 +3,9 @@
   border-radius: 10px;
   background-color: white;
   margin: 3rem auto;
-  background-color: rgb(5, 61, 61);
+  background-color: #00525f;
+  height: 800px;
+  width: 50%;
+  margin: auto;
+  margin-top: 3rem;
 }
