@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Button from "../UI/Button";
 import Something from "../../asset/Something.png";
 
-import styles from "./Header.module.css";
+import classes from "./Header.module.css";
 
 const Header = () => {
   return (
     <React.Fragment>
-      <div>
+      <div className={classes.header}>
         <img
           style={{ maxWidth: "225px", marginTop: "-3rem", marginLeft: "2rem" }}
           src={Something}
