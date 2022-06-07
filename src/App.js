@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LoginForm from './component/LoginForm/LoginForm';
-import './App.css'
 import Header from './component/Header/Header';
+import HeaderButton from './component/Header/HeaderButton';
 
 
 function App() {
+  const [LoginIsShown, setLoginIsShown] = useState(true)
+
+
+  const showLoginForm = () => {
+    setLoginIsShown(true)
+  }
+
+  const hideLoginHandler = () => {
+    setLoginIsShown(false)
+  }
+
   return (
     <div className="App">
       <React.Fragment>
-        <header>
-          <Header></Header>
-        </header>
+        {LoginIsShown && <LoginForm onClose={hideLoginHandler}  />}
+        <Header onShowLoginForm={showLoginForm} />
         <main>
-          <LoginForm />
+          {/* <LoginForm /> */}
         </main>
       </React.Fragment>
     </div>

@@ -1,12 +1,14 @@
 import React from 'react';
-import styles from './Button.module.css';
+import './Button.css';
 
-const Button = props => {
+const Button = (props) => {
+    const classes = 'button ' + props.className;
+
     return (
         <button
-            className={styles.button}
-            type={props.type}
+            className={classes}
             onClick={props.onClick}
+            type={props.type}
         >
             {props.children}
         </button>
@@ -14,3 +16,4 @@ const Button = props => {
 };
 
 export default Button;
+
