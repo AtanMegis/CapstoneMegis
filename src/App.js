@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import LoginForm from './component/LoginForm/LoginForm';
 import Header from './component/Header/Header';
-import HeaderButton from './component/Header/HeaderButton';
+import NewsList from './component/News/NewsList';
 
 
 function App() {
-  const [LoginIsShown, setLoginIsShown] = useState(true)
+  const [LoginIsShown, setLoginIsShown] = useState(false)
 
 
   const showLoginForm = () => {
@@ -22,7 +22,7 @@ function App() {
         {LoginIsShown && <LoginForm onClose={hideLoginHandler}  />}
         <Header onShowLoginForm={showLoginForm} />
         <main>
-          {/* <LoginForm /> */}
+          <NewsList />
         </main>
       </React.Fragment>
     </div>

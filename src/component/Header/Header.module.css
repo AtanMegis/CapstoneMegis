@@ -1,22 +1,10 @@
 .header {
-<<<<<<< HEAD
-  padding: 10;
-  border-radius: 10px;
-  background-color: white;
-  margin: 3rem auto;
-  background-color: #00525f;
-  width: 50%;
-  margin: auto;
-  margin-top: 3rem;
-}
-=======
-    padding: 10;
-    margin: 3rem auto;
+    /* padding: 10;
+    margin: 3rem auto; */
     background-color: #00525f;
-    width: 100%;
+    /* width: 100%;
     margin: auto;
-    height: 50px;
+    height: 50px; */
   }
 
  
->>>>>>> 5e761b7 (add Moda & backdrop)

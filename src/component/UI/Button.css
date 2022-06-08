@@ -1,16 +1,7 @@
 .button {
   border-radius: 12px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-<<<<<<< HEAD:src/component/UI/Card.module.css
-  background-color: #fff;
-  height: 700px;
-  width: 50%;
-  margin: auto;
-  margin-top: -3rem;
-}
-=======
   background-color: red;
 }
 
 
->>>>>>> 5e761b7 (add Moda & backdrop):src/component/UI/Button.css

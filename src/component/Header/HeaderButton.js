@@ -5,7 +5,7 @@ const HeaderButton = (props) => {
     return (
         <button
             className={classes.button}
-            onClick={props.onClickButtonLogin}>
+            onClick={props.onClickLoginButton}>
         </button>
     )
 }

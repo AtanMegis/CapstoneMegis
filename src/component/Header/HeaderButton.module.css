@@ -1,10 +1,10 @@
 .button {
-    cursor: pointer;
+    /* cursor: pointer;
     font: inherit;
     border: none;
     background-color: #4d1601;
     color: white;
-    padding: 0.75rem 3rem;
+    padding: 0.75rem 3rem; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -17,7 +17,7 @@
     background-color: #2c0d00;
 }
 
-@keyframes bump {
+/* @keyframes bump {
     0% {
         transform: scale(1);
     }
@@ -37,4 +37,4 @@
     100% {
         transform: scale(1);
     }
-}
+} */
