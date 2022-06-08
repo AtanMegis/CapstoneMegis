@@ -1,3 +1,4 @@
+import React from 'react'
 import useInput from "../../hooks/useInput";
 import Logo from "../../asset/UserLogo.png";
 import styles from "./LoginForm.module.css";
@@ -45,7 +46,8 @@ const LoginForm = (props) => {
     ? "form-control invalid"
     : "form-control";
 
-  const emailClasses = emailHasError ? "form-control invalid" : "form-control";
+  const emailClasses = emailHasError
+    ? "form-control invalid" : "form-control";
 
   return (
     <Modal onClose={props.onClose}>

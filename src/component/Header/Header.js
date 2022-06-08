@@ -12,10 +12,10 @@ const Header = (props) => {
           style={{ maxWidth: "225px", marginTop: "-3rem", marginLeft: "2rem" }}
           src={Something}
         ></img>
+        <HeaderButton onClickLoginButton={props.onShowLoginForm}></HeaderButton>
       </div>
-      <HeaderButton onClickLoginButton={props.onShowLoginForm}></HeaderButton>
       <div className="carrousel"> 
-          
+
       </div>
     </React.Fragment>
   );

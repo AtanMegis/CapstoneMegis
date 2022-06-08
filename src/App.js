@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LoginForm from './component/LoginForm/LoginForm';
 import Header from './component/Header/Header';
 import NewsList from './component/News/NewsList';
+import ProductList from './component/Products/ProductsList';
 
 
 function App() {
@@ -19,11 +20,14 @@ function App() {
   return (
     <div className="App">
       <React.Fragment>
-        {LoginIsShown && <LoginForm onClose={hideLoginHandler}  />}
+        {LoginIsShown && <LoginForm onClose={hideLoginHandler} />}
         <Header onShowLoginForm={showLoginForm} />
         <main>
-          <NewsList />
+          {/* <NewsList /> */}
+          <ProductList/>
         </main>
+        <footer>
+        </footer>
       </React.Fragment>
     </div>
   );
