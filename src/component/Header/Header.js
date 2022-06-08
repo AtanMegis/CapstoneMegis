@@ -1,6 +1,6 @@
 import React from "react";
 import Something from "../../asset/Something.png";
-
+import Carousel from "./Carousel/Carousel";
 import classes from "./Header.module.css";
 import HeaderButton from "./HeaderButton";
 
@@ -14,9 +14,7 @@ const Header = (props) => {
         ></img>
       </div>
       <HeaderButton onClickLoginButton={props.onShowLoginForm}></HeaderButton>
-      <div className="carrousel"> 
-          
-      </div>
+      <Carousel />
     </React.Fragment>
   );
 };
