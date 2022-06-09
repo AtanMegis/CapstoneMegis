@@ -92,7 +92,7 @@
     display: flex;
     top: 90%;
     justify-content: center;
-    z-index: 200;
+    z-index: 10;
 }
   
 .dot {

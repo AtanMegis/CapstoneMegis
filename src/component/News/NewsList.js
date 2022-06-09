@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import Card from '../UI/Card'
 import NewsItem from './NewsItem'
 
 
@@ -20,7 +20,7 @@ const NewsList = () => {
 
 
   return (
-    <div>
+    <Card>
       {articles.map(data => (
         <NewsItem
           key={data.id}
@@ -30,7 +30,7 @@ const NewsList = () => {
           urlToImage={data.urlToImage}
         />
       ))}
-    </div>
+    </Card>
   )
 }
 

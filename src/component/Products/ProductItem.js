@@ -16,9 +16,6 @@ const ProductItem = ({ title, url, body }) => {
             <div className={classes['card-body']}>
                 <p>{body}</p>
             </div>
-            <div className={classes['btn-card']}>
-                <button> Read More </button>
-            </div>
         </div>
     )
 }

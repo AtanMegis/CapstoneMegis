@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Card from '../UI/Card';
 
 import ProductItem from './ProductItem'
 
@@ -41,9 +42,9 @@ const ProductList = () => {
     ))
 
     return (
-        <div>
+        <Card>
             {dummyProduct}
-        </div>
+        </Card>
     )
 }
 

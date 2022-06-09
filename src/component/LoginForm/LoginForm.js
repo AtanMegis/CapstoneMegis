@@ -69,7 +69,6 @@ const LoginForm = (props) => {
               onChange={emailChangeHandler}
               onBlur={emailBlurHandler}
               value={EmailValue}
-              required
             />
             {emailHasError && (
               <p className={styles['error-text']}>Please enter your Email</p>
@@ -83,7 +82,6 @@ const LoginForm = (props) => {
               onChange={passwordChangeHandler}
               onBlur={passwordBlurHandler}
               value={passwordValue}
-              required
             />
             {passwordHasError && (
               <p className={styles['error-text']}>Please enter your Password</p>

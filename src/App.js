@@ -23,8 +23,8 @@ function App() {
         {LoginIsShown && <LoginForm onClose={hideLoginHandler} />}
         <Header onShowLoginForm={showLoginForm} />
         <main>
-          {/* <NewsList /> */}
           <ProductList/>
+          {/* <NewsList /> */}
         </main>
         <footer>
         </footer>
