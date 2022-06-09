@@ -18,6 +18,6 @@ let carouselImage = [
         description: 'Stunting is ....',
         urls: Third,
     },
-]
+];
 
 export default carouselImage;

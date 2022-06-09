@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from './component/LoginForm/LoginForm';
 import Header from './component/Header/Header';
+import Footer from './component/Footer/Footer';
 import NewsList from './component/News/NewsList';
 import ProductList from './component/Products/ProductsList';
 
@@ -26,8 +27,7 @@ function App() {
           <ProductList/>
           {/* <NewsList /> */}
         </main>
-        <footer>
-        </footer>
+        <Footer />
       </React.Fragment>
     </div>
   );
