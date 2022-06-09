@@ -21,6 +21,7 @@ const Header = (props) => {
         ></img>
         <HeaderButton onClickLoginButton={props.onShowLoginForm}></HeaderButton>
       </div>
+      <Carousel />
     </React.Fragment>
   );
 };
