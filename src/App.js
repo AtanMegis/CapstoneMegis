@@ -27,7 +27,7 @@ function App() {
           <ProductList/>
           {/* <NewsList /> */}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </React.Fragment>
     </div>
   );

@@ -8,7 +8,7 @@ const ProductItem = ({ title, url, body }) => {
             <div className={classes['image-container']}>
                 <img src={url} alt={url} />
             </div>
-            <div className={classes['card-title']}>
+            <div>
                 <h3>
                     <a href={url}>{title}</a>
                 </h3>
