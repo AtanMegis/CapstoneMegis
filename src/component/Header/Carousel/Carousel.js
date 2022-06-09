@@ -24,14 +24,14 @@ const Carousel = (props) => {
                 prevSlide={() => 
                     setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
                 } 
-                nextSlide={() => 
-                    setActiveIndex(activeIndex === 1 ? 0 : activeIndex + 1)
-                } 
+                nextSlide={() =>
+                    setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
+                }
             />
             <Dots 
                 activeIndex={activeIndex} 
                 carouselImage={carouselImage} 
-                onClick={activeIndex => setActiveIndex(activeIndex)}
+                onClick={(activeIndex) => setActiveIndex(activeIndex)}
             />
         </div>
     );
