@@ -1,5 +1,6 @@
 import React from "react";
 import Something from "../../asset/Something.png";
+import Carousel from "./Carousel/Carousel";
 
 import classes from "./Header.module.css";
 import HeaderButton from "./HeaderButton";
