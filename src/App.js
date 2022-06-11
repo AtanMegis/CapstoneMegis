@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LoginForm from "./component/LoginForm/LoginForm";
 import Header from "./component/Header/Header";
+import Footer from "./component/Footer/Footer";
 import ProductList from "./component/Products/ProductsList";
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
         <main>
           <ProductList />
         </main>
-        <footer></footer>
       </React.Fragment>
+      <Footer />
     </div>
   );
 }
