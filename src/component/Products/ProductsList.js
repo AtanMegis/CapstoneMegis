@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "../UI/Card";
+
 
 import ProductItem from "./ProductItem";
 
@@ -25,7 +25,7 @@ const ProductList = () => {
     },
     {
       id: "m4",
-      title: "Sop buntut ayam",
+      title: "MPASI",
       body: "MPASI",
       url: "https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg",
     },
@@ -41,7 +41,7 @@ const ProductList = () => {
     />
   ));
 
-  return <Card>{dummyProduct}</Card>;
+  return <>{dummyProduct}</>;
 };
 
 export default ProductList;

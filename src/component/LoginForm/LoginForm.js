@@ -1,7 +1,7 @@
 import React from 'react'
 import useInput from "../../hooks/useInput";
 import Logo from "../../asset/UserLogo.png";
-import styles from "./LoginForm.module.css";
+import "./LoginForm.css";
 import Modal from "../UI/Modal";
 
 const LoginForm = (props) => {
@@ -51,7 +51,7 @@ const LoginForm = (props) => {
 
   return (
     <Modal onClose={props.onClose}>
-      <form className={styles["form-layout"]} onSubmit={submitHandler}>
+      <form className="form-layout" onSubmit={submitHandler}>
         <img alt=''
           style={{
             maxWidth: "225px",
@@ -60,7 +60,7 @@ const LoginForm = (props) => {
           }}
           src={Logo}
         ></img>
-        <div className={styles['control-group']}>
+        <div className='control-group'>
           <div className={emailClasses}>
             <label htmlFor="name">Email</label>
             <input
@@ -71,7 +71,7 @@ const LoginForm = (props) => {
               value={EmailValue}
             />
             {emailHasError && (
-              <p className={styles['error-text']}>Please enter your Email</p>
+              <p className='error-text'>Please enter your Email</p>
             )}
           </div>
           <div className={passwordClasses}>
@@ -84,11 +84,11 @@ const LoginForm = (props) => {
               value={passwordValue}
             />
             {passwordHasError && (
-              <p className={styles['error-text']}>Please enter your Password</p>
+              <p className='error-text'>Please enter your Password</p>
             )}
           </div>
         </div>
-        <div className={styles['form-actions']}>
+        <div className='form-actions'>
           <button style={{ marginTop: "1rem" }} disabled={!formIsValid}>
             Masuk
           </button>
