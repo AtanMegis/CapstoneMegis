@@ -20,7 +20,7 @@ const ProductItem = ({ title, url, body }) => {
           incididunt ut labore et, consectetur adipiscing elit, sed do eiusmod
           tempor inc
         </p>
-       <button>Baca selengkapnya..</button>
+        <button className={classes["button-body"]}>Baca selengkapnya..</button>
       </div>
     </div>
   );

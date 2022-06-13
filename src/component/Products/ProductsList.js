@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-
+import classes from "./ProductsList.module.css";
 import ProductItem from "./ProductItem";
 
 const ProductList = () => {
@@ -41,7 +40,7 @@ const ProductList = () => {
     />
   ));
 
-  return <>{dummyProduct}</>;
+  return <div className={classes["wrapper"]}>{dummyProduct}</div>;
 };
 
 export default ProductList;
