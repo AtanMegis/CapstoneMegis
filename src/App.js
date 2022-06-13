@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import LoginForm from "./component/LoginForm/LoginForm";
-import Header from "./component/Header/Header";
-import Footer from "./component/Footer/Footer";
-import ProductList from "./component/Products/ProductsList";
+import LoginForm from "./components/LoginForm/LoginForm";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import ProductList from "./components/Products/ProductsList";
 
 function App() {
   const [LoginIsShown, setLoginIsShown] = useState(false);
