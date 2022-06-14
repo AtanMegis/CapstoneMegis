@@ -1,5 +1,5 @@
 import React from "react";
-import Something from "../../asset/Something.png";
+import Something from "../../assets/Something.png";
 import { authActions } from "../../config/Redux/auth";
 import Carousel from "./Carousel/Carousel";
 import classes from "./Header.module.css";

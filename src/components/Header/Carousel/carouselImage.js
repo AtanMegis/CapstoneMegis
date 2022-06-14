@@ -1,6 +1,6 @@
-import First from '../../../asset/First.jpg';
-import Second from '../../../asset/Second.jpg';
-import Third from '../../../asset/Third.jpg';
+import First from '../../../assets/First.jpg';
+import Second from '../../../assets/Second.jpg';
+import Third from '../../../assets/Third.jpg';
 
 let carouselImage = [
     {

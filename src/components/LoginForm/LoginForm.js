@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
 import useInput from "../../hooks/useInput";
-import Logo from "../../asset/UserLogo.png";
+import Logo from "../../assets/UserLogo.png";
 import "./LoginForm.css";
 import Modal from "../UI/Modal";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { authActions } from '../../config/Redux/auth';
 
 const LoginForm = (props) => {
-
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [didSubmit, setDidSubmit] = useState(false)
   const dispatch = useDispatch()
   const isNotEmpty = (value) => value.trim() !== "";
   const isEmail = (value) => value.includes("@");
@@ -39,7 +36,7 @@ const LoginForm = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(authActions.login())
-    setIsSubmitting(true)
+    
 
     if (!formIsValid) {
       return;
@@ -48,8 +45,7 @@ const LoginForm = (props) => {
     console.log(passwordValue, EmailValue);
     passwordResetHandler();
     emailResetHandler();
-    setDidSubmit(true)
-      (setIsSubmitting(false))
+    props.onClose()
   };
 
   const passwordClasses = passwordHasError
@@ -108,19 +104,9 @@ const LoginForm = (props) => {
 
   )
 
-  const isSubmittingModalContent = <p>Sending data</p>
-
-  const didSubmitModalContent =
-    <>
-      <p>Success Login</p>
-      <button onClick={props.onClose}>Close</button>
-    </>
-
   return (
     <Modal onClose={props.onClose}  >
-      {!isSubmitting && !didSubmit && modalActions}
-      {isSubmitting && isSubmittingModalContent}
-      {!isSubmitting && didSubmit && didSubmitModalContent}
+      {modalActions}
     </Modal>
 
   );

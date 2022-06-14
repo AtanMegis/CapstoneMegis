@@ -1,11 +1,13 @@
 import React from "react";
-import stunting from "../../asset/stunting.png";
-import "./stunting.css";
+import stunting from "../../assets/stunting.png";
+import classes from "./stunting.module.css";
 
 const Stunting = () => {
   return (
-    <div className="wrapper">
-      <div className="content-main">
+    <div className={classes["wrapper"]}>
+      <h1>STUNTING</h1>
+      <hr />
+      <div className={classes["content-main"]}>
         <section>
           <h3>Apa Itu Stunting?</h3>
           <p>
@@ -16,7 +18,7 @@ const Stunting = () => {
             badan anak lebih rendah atau pendek (kerdil) dari standar usianya.
           </p>
         </section>
-        <div className="img-container">
+        <div className={classes["img-container"]}>
           <img alt="" src={stunting} />
           <p>
             Masalah stunting dipengaruhi oleh rendahnya akses terhadap makanan

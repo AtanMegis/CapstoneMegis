@@ -24,6 +24,7 @@
 .footer-text {
     font-weight: 700;
     font-size: 2rem;
+    text-align: left;
 }
 
 .footer-address h2 {

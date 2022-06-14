@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "../UI/Button";
-import Something from "../../asset/Something.png";
+import Something from "../../assets/Something.png";
 
 import classes from "./Header.module.css";
 

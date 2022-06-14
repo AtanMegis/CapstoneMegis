@@ -25,7 +25,7 @@ function App() {
         {LoginIsShown && <LoginForm onClose={hideLoginHandler} />}
         <Header onShowLoginForm={showLoginForm} />
         <main>
-          <Stunting />
+          <NewsList />
         </main>
       </React.Fragment>
       <Footer />
