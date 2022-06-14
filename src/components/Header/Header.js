@@ -1,10 +1,21 @@
 import React from "react";
 import Something from "../../asset/Something.png";
+import { authActions } from "../../config/Redux/auth";
 import Carousel from "./Carousel/Carousel";
 import classes from "./Header.module.css";
 import HeaderButton from "./HeaderButton";
+import { useSelector, useDispatch } from 'react-redux';
 
 const Header = (props) => {
+  const dispatch = useDispatch()
+  const isAuth = useSelector((state) => state.auth.isAuthenticated)
+  
+
+  const logoutHandler = (e) => {
+    dispatch(authActions.logout())
+  }
+
+
   return (
     <React.Fragment>
       <div style={{}} className={classes.header}>
@@ -18,7 +29,8 @@ const Header = (props) => {
           }}
           src={Something}
         ></img>
-        <HeaderButton onClickLoginButton={props.onShowLoginForm}></HeaderButton>
+        {!isAuth && <HeaderButton onClickLoginButton={props.onShowLoginForm}></HeaderButton>}
+        {isAuth &&<button onClick={logoutHandler}>Logout</button>}
       </div>
       <Carousel />
     </React.Fragment>

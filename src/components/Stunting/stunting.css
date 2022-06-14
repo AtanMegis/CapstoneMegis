@@ -1,0 +1,21 @@
+.wrapper {
+    display: block;
+    padding: 5rem;
+  }
+  
+  .content-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  .img-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  p, h3 {
+    line-height: 1.5rem;
+  }

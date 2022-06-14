@@ -10,9 +10,9 @@ const NewsList = () => {
   useEffect(() => {
 
     const getArticles = async () => {
-      const response = await axios.get('https://newsapi.org/v2/everything?q=tesla&from=2022-05-13&sortBy=publishedAt&apiKey=ee3303314c7e4386a09e9dabb12d2b2f')
-      console.log(response)
-      setArticles(response.data.articles)
+      const response = await axios.get('https://62a6e5a797b6156bff81e2bc.mockapi.io/berita')
+      // console.log(response)
+      setArticles(response.data)
     }
     getArticles()
   }, [])
@@ -20,17 +20,18 @@ const NewsList = () => {
 
 
   return (
-    <Fragment>
+    <>
       {articles.map(data => (
         <NewsItem
           key={data.id}
+          id={data.id}
           title={data.title}
           description={data.description}
           url={data.url}
           urlToImage={data.urlToImage}
         />
       ))}
-    </Fragment>
+    </>
   )
 }
 
