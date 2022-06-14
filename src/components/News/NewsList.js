@@ -1,27 +1,25 @@
-import React, { useState, useEffect, Fragment } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect, Fragment } from "react";
+import axios from "axios";
 
-import NewsItem from './NewsItem'
-
+import NewsItem from "./NewsItem";
 
 const NewsList = () => {
-  const [articles, setArticles] = useState([])
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-
     const getArticles = async () => {
-      const response = await axios.get('https://62a6e5a797b6156bff81e2bc.mockapi.io/berita')
+      const response = await axios.get(
+        "https://62a6e5a797b6156bff81e2bc.mockapi.io/berita"
+      );
       // console.log(response)
-      setArticles(response.data)
-    }
-    getArticles()
-  }, [])
-
-
+      setArticles(response.data);
+    };
+    getArticles();
+  }, []);
 
   return (
-    <>
-      {articles.map(data => (
+    <div className={{}}>
+      {articles.map((data) => (
         <NewsItem
           key={data.id}
           id={data.id}
@@ -31,8 +29,8 @@ const NewsList = () => {
           urlToImage={data.urlToImage}
         />
       ))}
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default NewsList
+export default NewsList;
