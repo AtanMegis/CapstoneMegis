@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useInput from "../../hooks/useInput";
 import Logo from "../../assets/UserLogo.png";
 import "./LoginForm.css";
 import Modal from "../UI/Modal";
 import { useDispatch } from 'react-redux';
-import { authActions } from '../../config/Redux/auth';
+import { authActions } from '../../config/redux/reducers/auth';
+
 
 const LoginForm = (props) => {
   const dispatch = useDispatch()
@@ -36,16 +37,16 @@ const LoginForm = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(authActions.login())
-    
+
 
     if (!formIsValid) {
       return;
     }
-    console.log("submitted!");
-    console.log(passwordValue, EmailValue);
+    // console.log("submitted!");
+    // console.log(passwordValue, EmailValue);
     passwordResetHandler();
     emailResetHandler();
-    props.onClose()
+    props.onClose();
   };
 
   const passwordClasses = passwordHasError
@@ -55,60 +56,55 @@ const LoginForm = (props) => {
   const emailClasses = emailHasError
     ? "form-control invalid" : "form-control";
 
-  const modalActions = (
-    <form className="form-layout" onSubmit={submitHandler}>
-      <img alt=''
-        style={{
-          maxWidth: "225px",
-          alignSelf: "center",
-          padding: "2rem 0",
-        }}
-        src={Logo}
-      ></img>
-      <div className='control-group'>
-        <div className={emailClasses}>
-          <label htmlFor="name">Email</label>
-          <input
-            type="email"
-            id="name"
-            onChange={emailChangeHandler}
-            onBlur={emailBlurHandler}
-            value={EmailValue}
-          />
-          {emailHasError && (
-            <p className='error-text'>Please enter your Email</p>
-          )}
-        </div>
-        <div className={passwordClasses}>
-          <label htmlFor="name">Password</label>
-          <input
-            type="text"
-            id="name"
-            onChange={passwordChangeHandler}
-            onBlur={passwordBlurHandler}
-            value={passwordValue}
-          />
-          {passwordHasError && (
-            <p className='error-text'>Please enter your Password</p>
-          )}
-        </div>
-      </div>
-      <div className='form-actions'>
-        <button style={{ marginTop: "1rem" }} disabled={!formIsValid} >
-          Masuk
-        </button>
-        <button onClick={props.onClose}>Close</button>
-      </div>
-    </form>
 
-
-  )
 
   return (
     <Modal onClose={props.onClose}  >
-      {modalActions}
+      <form className="form-layout" onSubmit={submitHandler}>
+        <img alt=''
+          style={{
+            maxWidth: "225px",
+            alignSelf: "center",
+            padding: "2rem 0",
+          }}
+          src={Logo}
+        ></img>
+        <div className='control-group'>
+          <div className={emailClasses}>
+            <label htmlFor="name">Email</label>
+            <input
+              type="email"
+              id="name"
+              onChange={emailChangeHandler}
+              onBlur={emailBlurHandler}
+              value={EmailValue}
+            />
+            {emailHasError && (
+              <p className='error-text'>Please enter your Email</p>
+            )}
+          </div>
+          <div className={passwordClasses}>
+            <label htmlFor="name">Password</label>
+            <input
+              type="text"
+              id="name"
+              onChange={passwordChangeHandler}
+              onBlur={passwordBlurHandler}
+              value={passwordValue}
+            />
+            {passwordHasError && (
+              <p className='error-text'>Please enter your Password</p>
+            )}
+          </div>
+        </div>
+        <div className='form-actions'>
+          <button style={{ marginTop: "1rem" }} disabled={!formIsValid} >
+            Masuk
+          </button>
+          <button onClick={props.onClose}>Keluar</button>
+        </div>
+      </form>
     </Modal>
-
   );
 };
 

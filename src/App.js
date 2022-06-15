@@ -6,6 +6,9 @@ import ProductList from "./components/Products/ProductsList";
 import NewsList from "./components/News/NewsList";
 import { Route } from "react-router-dom";
 import Stunting from "./components/Stunting/Stunting";
+import Register from "./components/Register/Register";
+import AuthModal from "./components/AuthModal/AuthModal";
+
 
 function App() {
   const [LoginIsShown, setLoginIsShown] = useState(false);
@@ -22,10 +25,10 @@ function App() {
   return (
     <div className="App">
       <React.Fragment>
-        {LoginIsShown && <LoginForm onClose={hideLoginHandler} />}
+        {LoginIsShown && <AuthModal onClose={hideLoginHandler} />}
         <Header onShowLoginForm={showLoginForm} />
         <main>
-          <NewsList />
+          <ProductList/>
         </main>
       </React.Fragment>
       <Footer />
