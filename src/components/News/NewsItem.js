@@ -4,11 +4,11 @@ import classes from "./NewsItem.module.css";
 
 const NewsItem = ({ title, description, url, urlToImage }) => {
   return (
-    <div className={classes["news-app"]}>
-      <div className={classes["news-item"]}>
+    <div className="pt-20">
+      <div className="shadow-md">
         <div>
           <img
-            className={classes["news-img"]}
+            className="w-60 h-60"
             src={urlToImage}
             alt={urlToImage}
           />

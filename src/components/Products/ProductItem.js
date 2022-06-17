@@ -4,22 +4,24 @@ import classes from "./ProductItem.module.css";
 
 const ProductItem = ({ title, url, body }) => {
   return (
-    <div className={classes["card-container"]}>
-      <div className={classes["image-container"]}>
-        <img src={url} alt={url} />
+    <div className="shadow-2xl">
+      <div className="">
+        <img src={url} alt={url} className="w-68 h-40"/>
       </div>
-      <div className={classes["card-title"]}>
+      <div className="font-bold text-center pt-2">
         <h3>
           <a href={url}>{title}</a>
         </h3>
       </div>
-      <div className={classes["card-body"]}>
+      <div className="text-justify m-4">
         <p>
           lorem ipsum dolor sit amet, consectetur adipis, sed do eiusmod tempor
           incididunt ut labore et, consectetur adipiscing elit, sed do eiusmod
           tempor inc
         </p>
-        <button className={classes["button-body"]}>Baca selengkapnya..</button>
+      </div>
+      <div className="">
+        <button className="hover:bg-white">Baca selengkapnya..</button>
       </div>
     </div>
   );

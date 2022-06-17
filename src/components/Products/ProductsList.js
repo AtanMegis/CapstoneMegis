@@ -40,7 +40,7 @@ const ProductList = () => {
     />
   ));
 
-  return <div className={classes["wrapper"]}>{dummyProduct}</div>;
+  return <div className="flex p-8 shadow-xl gap-6">{dummyProduct}</div>;
 };
 
 export default ProductList;
