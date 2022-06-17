@@ -2,9 +2,10 @@ import React from 'react'
 import useInput from "../../hooks/useInput";
 import Logo from "../../assets/UserLogo.png";
 import "./LoginForm.css";
-import Modal from "../UI/Modal";
 import { useDispatch } from 'react-redux';
 import { authActions } from '../../config/redux/reducers/auth';
+import { signInWithEmailAndPassword} from 'firebase/auth';
+import { auth } from "../../config/firebase/firebase"
 
 
 const LoginForm = (props) => {
@@ -34,16 +35,25 @@ const LoginForm = (props) => {
 
   if (passwordIsValid && emailIsValid) formIsValid = true;
 
-  const submitHandler = (e) => {
+  const submitHandler = async(e) => {
     e.preventDefault();
     dispatch(authActions.login())
-
+    
+    
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        EmailValue,
+        passwordValue
+      )
+      console.log('udah Login : ', user);
+    } catch (error) {
+        console.log(error.message)
+      }
 
     if (!formIsValid) {
       return;
     }
-    // console.log("submitted!");
-    // console.log(passwordValue, EmailValue);
     passwordResetHandler();
     emailResetHandler();
     props.onClose();
@@ -59,7 +69,6 @@ const LoginForm = (props) => {
 
 
   return (
-    <Modal onClose={props.onClose}  >
       <form className="form-layout" onSubmit={submitHandler}>
         <img alt=''
           style={{
@@ -104,7 +113,6 @@ const LoginForm = (props) => {
           <button onClick={props.onClose}>Keluar</button>
         </div>
       </form>
-    </Modal>
   );
 };
 
