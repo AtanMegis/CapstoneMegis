@@ -1,9 +1,10 @@
 import React from "react";
 import Something from "../../assets/Something.png";
-import { authActions } from "../../config/Redux/auth";
+import { authActions } from "../../config/redux/reducers/auth";
 import Carousel from "./Carousel/Carousel";
 import HeaderButton from "./HeaderButton";
 import { useSelector, useDispatch } from 'react-redux';
+
 
 const Header = (props) => {
   const dispatch = useDispatch()
