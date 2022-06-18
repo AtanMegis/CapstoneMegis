@@ -1,156 +1,166 @@
-import React from 'react'
-import useInput from '../../hooks/useInput'
+import React from "react";
+import useInput from "../../hooks/useInput";
 import Logo from "../../assets/UserLogo.png";
-import './Register.css'
-import { createUserWithEmailAndPassword, getIdToken, sendEmailVerification } from 'firebase/auth';
+import "./Register.css";
+import {
+	createUserWithEmailAndPassword,
+	getIdToken,
+	sendEmailVerification,
+} from "firebase/auth";
 import { auth } from "../../config/firebase/firebase";
 
+const Register = ({ onChangeAuthPage, onClose }) => {
+	const isNotEmpty = (value) => value.trim() !== "";
+	const isEmail = (value) => value.includes("@");
 
+	const {
+		value: passwordValue,
+		hasError: passwordHasError,
+		isValid: passwordIsValid,
+		inputBlurHandler: passwordBlurHandler,
+		valueChangeHandler: passwordChangeHandler,
+		reset: passwordResetHandler,
+	} = useInput(isNotEmpty);
 
+	const {
+		value: passwordConfValue,
+		hasError: passwordConfHasError,
+		isValid: passwordConfIsValid,
+		inputBlurHandler: passwordConfBlurHandler,
+		valueChangeHandler: passwordConfChangeHandler,
+		reset: passwordConfResetHandler,
+	} = useInput(isNotEmpty);
 
-const Register = (props) => {
-    const isNotEmpty = (value) => value.trim() !== "";
-    const isEmail = (value) => value.includes("@");
+	const {
+		value: EmailValue,
+		hasError: emailHasError,
+		isValid: emailIsValid,
+		inputBlurHandler: emailBlurHandler,
+		valueChangeHandler: emailChangeHandler,
+		reset: emailResetHandler,
+	} = useInput(isEmail);
 
-    const {
-        value: passwordValue,
-        hasError: passwordHasError,
-        isValid: passwordIsValid,
-        inputBlurHandler: passwordBlurHandler,
-        valueChangeHandler: passwordChangeHandler,
-        reset: passwordResetHandler,
-    } = useInput(isNotEmpty);
+	let passwordMatch = false;
 
-    const {
-        value: passwordConfValue,
-        hasError: passwordConfHasError,
-        isValid: passwordConfIsValid,
-        inputBlurHandler: passwordConfBlurHandler,
-        valueChangeHandler: passwordConfChangeHandler,
-        reset: passwordConfResetHandler,
-    } = useInput(isNotEmpty);
+	if (
+		passwordValue === passwordConfValue &&
+		passwordIsValid &&
+		passwordConfIsValid
+	)
+		passwordMatch = true;
 
-    const {
-        value: EmailValue,
-        hasError: emailHasError,
-        isValid: emailIsValid,
-        inputBlurHandler: emailBlurHandler,
-        valueChangeHandler: emailChangeHandler,
-        reset: emailResetHandler,
-    } = useInput(isEmail);
+	let formIsValid = false;
 
+	if (passwordMatch && emailIsValid) {
+		formIsValid = true;
+	}
 
-    let passwordMatch = false;
+	const submitHandler = async (e) => {
+		e.preventDefault();
 
-    if ((passwordValue === passwordConfValue) && passwordIsValid && passwordConfIsValid) passwordMatch = true;
+		try {
+			const user = await createUserWithEmailAndPassword(
+				auth,
+				EmailValue,
+				passwordValue,
+				passwordConfValue
+			).then((response) => {
+				sendEmailVerification();
+				getIdToken();
+				console.log(response, "mohon verifikasi email anda !");
+			});
+			console.log("user Sign Up :", user);
+		} catch (error) {
+			console.log(error);
+		}
 
-    let formIsValid = false;
+		if (!formIsValid) {
+			return;
+		}
+		console.log("submitted!");
+		console.log(passwordValue, EmailValue);
+		emailResetHandler();
+		passwordConfResetHandler();
+		passwordResetHandler();
+		onClose();
+	};
 
-    if (passwordMatch && emailIsValid) {
-        formIsValid = true;
-    }
+	const passwordClasses = passwordHasError
+		? "form-control invalid"
+		: "form-control";
 
-    const submitHandler = async (e) => {
-        e.preventDefault()
+	const emailClasses = emailHasError ? "form-control invalid" : "form-control";
 
-        try {
-            const user = await createUserWithEmailAndPassword(
-                auth,
-                EmailValue,
-                passwordValue,
-                passwordConfValue,
-            ).then(response => {
-                sendEmailVerification()
-                getIdToken()
-               console.log(response, 'mohon verifikasi email anda !')    
-              })
-            console.log('user Sign Up :', user)
-        } catch (error) {
-            console.log(error)
-        }
+	const passwordConfClasses = passwordConfHasError
+		? "form-control invalid"
+		: "form-control";
 
-        if (!formIsValid) {
-            return;
-        }
-        console.log("submitted!");
-        console.log(passwordValue, EmailValue);
-        emailResetHandler()
-        passwordConfResetHandler()
-        passwordResetHandler()
-        
-    }
+	return (
+		<form onSubmit={submitHandler}>
+			<img
+				alt=""
+				style={{
+					maxWidth: "225px",
+					alignSelf: "center",
+					padding: "2rem 0",
+				}}
+				src={Logo}
+			></img>
+			<div className="control-group">
+				<div className={emailClasses}>
+					<label htmlFor="name">Email</label>
+					<input
+						type="email"
+						id="name"
+						onChange={emailChangeHandler}
+						onBlur={emailBlurHandler}
+						value={EmailValue}
+					/>
+					{emailHasError && (
+						<p className="error-text">Please enter your Email</p>
+					)}
+				</div>
+			</div>
+			<div className={passwordClasses}>
+				<label htmlFor="name">Password</label>
+				<input
+					type="text"
+					id="name"
+					onChange={passwordChangeHandler}
+					onBlur={passwordBlurHandler}
+					value={passwordValue}
+				/>
+				{passwordHasError && (
+					<p className="error-text">Please enter your Password</p>
+				)}
+			</div>
+			<div className={passwordConfClasses}>
+				<label htmlFor="name">Password</label>
+				<input
+					type="text"
+					id="name"
+					onChange={passwordConfChangeHandler}
+					onBlur={passwordConfBlurHandler}
+					value={passwordConfValue}
+				/>
+				{passwordConfHasError && (
+					<p className="error-text">Please Confirm your password</p>
+				)}
+			</div>
+			<div>
+				<p>
+					Sudah punya akun? login{" "}
+					<button onClick={onChangeAuthPage}>di sini</button>
+				</p>
+			</div>
+			<div className="form-actions">
+				<button style={{ marginTop: "1rem" }} disabled={!formIsValid}>
+					Daftar
+				</button>
+				<button onClick={onClose}>Keluar</button>
+			</div>
+		</form>
+	);
+};
 
-    const passwordClasses = passwordHasError
-        ? "form-control invalid"
-        : "form-control";
-
-    const emailClasses = emailHasError
-        ? "form-control invalid" : "form-control";
-
-    const passwordConfClasses = passwordConfHasError
-        ? "form-control invalid"
-        : "form-control";
-
-    return (
-        <form onSubmit={submitHandler}>
-            <img alt=''
-                style={{
-                    maxWidth: "225px",
-                    alignSelf: "center",
-                    padding: "2rem 0",
-                }}
-                src={Logo}
-            ></img>
-            <div className='control-group'>
-                <div className={emailClasses}>
-                    <label htmlFor="name">Email</label>
-                    <input
-                        type="email"
-                        id="name"
-                        onChange={emailChangeHandler}
-                        onBlur={emailBlurHandler}
-                        value={EmailValue}
-                    />
-                    {emailHasError && (
-                        <p className='error-text'>Please enter your Email</p>
-                    )}
-                </div>
-            </div>
-            <div className={passwordClasses}>
-                <label htmlFor="name">Password</label>
-                <input
-                    type="text"
-                    id="name"
-                    onChange={passwordChangeHandler}
-                    onBlur={passwordBlurHandler}
-                    value={passwordValue}
-                />
-                {passwordHasError && (
-                    <p className='error-text'>Please enter your Password</p>
-                )}
-            </div>
-            <div className={passwordConfClasses}>
-                <label htmlFor="name">Password</label>
-                <input
-                    type="text"
-                    id="name"
-                    onChange={passwordConfChangeHandler}
-                    onBlur={passwordConfBlurHandler}
-                    value={passwordConfValue}
-                />
-                {passwordConfHasError && (
-                    <p className='error-text'>Please Confirm your password</p>
-                )}
-            </div>
-            <div className='form-actions'>
-                <button style={{ marginTop: "1rem" }} disabled={!formIsValid} >
-                    Daftar
-                </button>
-                <button onClick={props.onClose}>Keluar</button>
-            </div>
-        </form>
-
-    )
-}
-
-export default Register
+export default Register;
