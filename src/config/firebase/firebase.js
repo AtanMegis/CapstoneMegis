@@ -1,17 +1,19 @@
-import firebase from 'firebase/app';
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAvII-UVixB_BNXyLSrvrqpyrucOjPpBbA",
-    authDomain: "capstonemegis.firebaseapp.com",
-    projectId: "capstonemegis",
-    storageBucket: "capstonemegis.appspot.com",
-    messagingSenderId: "104883895528",
-    appId: "1:104883895528:web:bb7f705a3eeaa2f5901d5d",
-    measurementId: "G-3KQD24JCML"
-  };
+  apiKey: "AIzaSyAvII-UVixB_BNXyLSrvrqpyrucOjPpBbA",
+  authDomain: "capstonemegis.firebaseapp.com",
+  projectId: "capstonemegis",
+  storageBucket: "capstonemegis.appspot.com",
+  messagingSenderId: "104883895528",
+  appId: "1:104883895528:web:bb7f705a3eeaa2f5901d5d",
+  measurementId: "G-3KQD24JCML"
+};
 
-  firebase.initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 
-  export default firebase;
-  
+
+

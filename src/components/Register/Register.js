@@ -1,7 +1,10 @@
 import React from 'react'
-import Modal from '../UI/Modal'
 import useInput from '../../hooks/useInput'
 import Logo from "../../assets/UserLogo.png";
+import './Register.css'
+import { createUserWithEmailAndPassword, getIdToken, sendEmailVerification } from 'firebase/auth';
+import { auth } from "../../config/firebase/firebase";
+
 
 const Register = (props) => {
     const isNotEmpty = (value) => value.trim() !== "";
@@ -45,8 +48,24 @@ const Register = (props) => {
         formIsValid = true;
     }
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault()
+
+        try {
+            const user = await createUserWithEmailAndPassword(
+                auth,
+                EmailValue,
+                passwordValue,
+                passwordConfValue,
+            ).then(response => {
+                sendEmailVerification()
+                getIdToken()
+               console.log(response, 'mohon verifikasi email anda !')    
+              })
+            console.log('user Sign Up :', user)
+        } catch (error) {
+            console.log(error)
+        }
 
         if (!formIsValid) {
             return;
@@ -71,65 +90,64 @@ const Register = (props) => {
         : "form-control";
 
     return (
-        <Modal onClose={props.onClose} >
-            <form onSubmit={submitHandler}>
-                <img alt=''
-                    style={{
-                        maxWidth: "225px",
-                        alignSelf: "center",
-                        padding: "2rem 0",
-                    }}
-                    src={Logo}
-                ></img>
-                <div className='control-group'>
-                    <div className={emailClasses}>
-                        <label htmlFor="name">Email</label>
-                        <input
-                            type="email"
-                            id="name"
-                            onChange={emailChangeHandler}
-                            onBlur={emailBlurHandler}
-                            value={EmailValue}
-                        />
-                        {emailHasError && (
-                            <p className='error-text'>Please enter your Email</p>
-                        )}
-                    </div>
-                </div>
-                <div className={passwordClasses}>
-                    <label htmlFor="name">Password</label>
+        <form onSubmit={submitHandler}>
+            <img alt=''
+                style={{
+                    maxWidth: "225px",
+                    alignSelf: "center",
+                    padding: "2rem 0",
+                }}
+                src={Logo}
+            ></img>
+            <div className='control-group'>
+                <div className={emailClasses}>
+                    <label htmlFor="name">Email</label>
                     <input
-                        type="text"
+                        type="email"
                         id="name"
-                        onChange={passwordChangeHandler}
-                        onBlur={passwordBlurHandler}
-                        value={passwordValue}
+                        onChange={emailChangeHandler}
+                        onBlur={emailBlurHandler}
+                        value={EmailValue}
                     />
-                    {passwordHasError && (
-                        <p className='error-text'>Please enter your Password</p>
+                    {emailHasError && (
+                        <p className='error-text'>Please enter your Email</p>
                     )}
                 </div>
-                <div className={passwordConfClasses}>
-                    <label htmlFor="name">Password</label>
-                    <input
-                        type="text"
-                        id="name"
-                        onChange={passwordConfChangeHandler}
-                        onBlur={passwordConfBlurHandler}
-                        value={passwordConfValue}
-                    />
-                    {passwordConfHasError && (
-                        <p className='error-text'>Please Confirm your password</p>
-                    )}
-                </div>
-                <div className='form-actions'>
-                    <button style={{ marginTop: "1rem" }} disabled={!formIsValid} >
-                        Masuk
-                    </button>
-                    <button onClick={props.onClose}>Keluar</button>
-                </div>
-            </form>
-        </Modal>
+            </div>
+            <div className={passwordClasses}>
+                <label htmlFor="name">Password</label>
+                <input
+                    type="text"
+                    id="name"
+                    onChange={passwordChangeHandler}
+                    onBlur={passwordBlurHandler}
+                    value={passwordValue}
+                />
+                {passwordHasError && (
+                    <p className='error-text'>Please enter your Password</p>
+                )}
+            </div>
+            <div className={passwordConfClasses}>
+                <label htmlFor="name">Password</label>
+                <input
+                    type="text"
+                    id="name"
+                    onChange={passwordConfChangeHandler}
+                    onBlur={passwordConfBlurHandler}
+                    value={passwordConfValue}
+                />
+                {passwordConfHasError && (
+                    <p className='error-text'>Please Confirm your password</p>
+                )}
+            </div>
+            <div className='form-actions'>
+                <button style={{ marginTop: "1rem" }} disabled={!formIsValid} >
+                    Daftar
+                </button>
+                <button onClick={props.onClose}>Keluar</button>
+            </div>
+        </form>
+
     )
 }
 
