@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 
-import NewsItem from './NewsItem';
+import NewsItem from './@NewsItem';
 
 const NewsList = () => {
 	const [articles, setArticles] = useState([]);

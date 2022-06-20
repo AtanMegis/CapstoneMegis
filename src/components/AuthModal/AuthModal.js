@@ -1,38 +1,38 @@
 import React, { useState } from 'react';
+import RegisterForm from './RegisterForm/RegisterForm';
 import LoginForm from './LoginForm/LoginForm';
-import Register from './RegisterForm/Register';
 import Modal from '../UI/Modal';
 
 const AuthModal = (props) => {
-    const AUTH_PAGES = {
-        LOGIN: 'login',
-        REGISTER: 'register',
-    };
-    const [authPage, setAuthPage] = useState(AUTH_PAGES.LOGIN);
+	const AUTH_PAGES = {
+		LOGIN: 'login',
+		REGISTER: 'register',
+	};
+	const [authPage, setAuthPage] = useState(AUTH_PAGES.LOGIN);
 
-    const handleChangeAuthPage = () => {
-        setAuthPage(
-            authPage === AUTH_PAGES.LOGIN
-                ? AUTH_PAGES.REGISTER
-                : AUTH_PAGES.LOGIN
-        );
-    };
+	const handleChangeAuthPage = () => {
+		setAuthPage(
+			authPage === AUTH_PAGES.LOGIN
+				? AUTH_PAGES.REGISTER
+				: AUTH_PAGES.LOGIN
+		);
+	};
 
-    return (
-        <Modal onClose={props.onClose}>
-            {authPage === AUTH_PAGES.LOGIN ? (
-                <LoginForm
-                    onchangeAuthPage={handleChangeAuthPage}
-                    onClose={props.onClose}
-                />
-            ) : (
-                <Register
-                    onchangeAuthPage={handleChangeAuthPage}
-                    onClose={props.onClose}
-                />
-            )}
-        </Modal>
-    );
+	return (
+		<Modal onClose={props.onClose}>
+			{authPage === AUTH_PAGES.LOGIN ? (
+				<LoginForm
+					onchangeAuthPage={handleChangeAuthPage}
+					onClose={props.onClose}
+				/>
+			) : (
+				<RegisterForm
+					onchangeAuthPage={handleChangeAuthPage}
+					onClose={props.onClose}
+				/>
+			)}
+		</Modal>
+	);
 };
 
 export default AuthModal;

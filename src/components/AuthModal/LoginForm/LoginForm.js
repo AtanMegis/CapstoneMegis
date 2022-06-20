@@ -1,10 +1,10 @@
 import React from 'react';
-import useInput from 'hooks/useInput';
-import Logo from 'assets/UserLogo.png';
+import useInput from '@hooks/useInput';
+import Logo from '@assets/UserLogo.png';
 import './LoginForm.css';
 import { useDispatch } from 'react-redux';
-import { authActions } from 'config/redux/reducers/auth';
-import { SERVICE_AUTH } from 'services/auth.service';
+import { authActions } from '@config/redux/reducers/auth';
+import { SERVICE_AUTH } from '@services/auth.service';
 
 const LoginForm = ({ onchangeAuthPage, onClose }) => {
 	const dispatch = useDispatch();
@@ -76,7 +76,9 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 						value={EmailValue}
 					/>
 					{emailHasError && (
-						<p className="error-text">Please enter your Email</p>
+						<p className="error-text">
+							Please enter your Email
+						</p>
 					)}
 				</div>
 				<div className={passwordClasses}>
@@ -89,18 +91,26 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 						value={passwordValue}
 					/>
 					{passwordHasError && (
-						<p className="error-text">Please enter your Password</p>
+						<p className="error-text">
+							Please enter your Password
+						</p>
 					)}
 				</div>
 			</div>
 			<p>
 				Belum punya akun?{' '}
-				<button className="button-disini" onClick={onchangeAuthPage}>
+				<button
+					className="button-disini"
+					onClick={onchangeAuthPage}
+				>
 					Register
 				</button>
 			</p>
 			<div className="form-actions">
-				<button style={{ marginTop: '1rem' }} disabled={!formIsValid}>
+				<button
+					style={{ marginTop: '1rem' }}
+					disabled={!formIsValid}
+				>
 					Masuk
 				</button>
 				<button onClick={onClose}>Keluar</button>

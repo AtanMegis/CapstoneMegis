@@ -1,11 +1,10 @@
 import React from 'react';
-import Something from 'assets/Something.png';
-import { authActions } from 'config/redux/reducers/auth';
+import Something from '@assets/Something.png';
+import { authActions } from '@config/redux/reducers/auth';
 import Carousel from './Carousel/Carousel';
 import classes from './Header.module.css';
 import HeaderButton from './HeaderButton';
 import { useSelector, useDispatch } from 'react-redux';
-import { auth } from 'config/firebase/firebase';
 
 const Header = (props) => {
 	const dispatch = useDispatch();

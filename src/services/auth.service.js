@@ -4,7 +4,7 @@ import {
 	sendEmailVerification,
 	getIdToken,
 } from 'firebase/auth';
-import { auth } from 'config/firebase/firebase';
+import { auth } from '@config/firebase/firebase';
 
 const login = async (passwordValue, emailValue, callback) => {
 	try {

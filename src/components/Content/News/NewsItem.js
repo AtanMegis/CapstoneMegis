@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './NewsItem.module.css';
+import classes from './@NewsItem.module.css';
 
 const NewsItem = ({ title, description, url, urlToImage }) => {
 	return (
