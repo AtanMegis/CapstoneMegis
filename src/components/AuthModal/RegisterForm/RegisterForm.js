@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import useInput from 'hooks/useInput';
-import Logo from 'assets/UserLogo.png';
-import './Register.css';
+import useInput from '@hooks/useInput';
+import Logo from '@assets/UserLogo.png';
+import './RegisterForm.css';
 import { useDispatch } from 'react-redux';
-import { SERVICE_AUTH } from 'services/auth.service';
-import { authActions } from 'config/redux/reducers/auth';
+import { SERVICE_AUTH } from '@services/auth.service';
+import { authActions } from '@config/redux/reducers/auth';
 
-const Register = ({ onchangeAuthPage, onClose, scroll }) => {
+const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 	const dispatch = useDispatch();
 	const isNotEmpty = (value) => value.trim() !== '';
 	const isEmail = (value) => value.includes('@');
@@ -72,7 +72,6 @@ const Register = ({ onchangeAuthPage, onClose, scroll }) => {
 			emailResetHandler();
 			onClose();
 		}
-		scroll.current.scrollIntoView({ behavior: 'smooth' });
 	};
 
 	const passwordClasses = passwordHasError
@@ -180,4 +179,4 @@ const Register = ({ onchangeAuthPage, onClose, scroll }) => {
 	);
 };
 
-export default Register;
+export default RegisterForm;

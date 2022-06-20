@@ -1,21 +1,9 @@
-<<<<<<< HEAD
-/* .header {
-  background-color: #00525f;
-  width: 100%;
-  margin: auto;
-  height: 120px;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 2rem;
-} */
-=======
 .header {
-    background-color: #00525f;
-    width: 100%;
-    margin: auto;
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 2rem;
+	background-color: #00525f;
+	width: 100%;
+	margin: auto;
+	height: 120px;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 2rem;
 }
->>>>>>> temp-dev

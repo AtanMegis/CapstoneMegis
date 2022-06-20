@@ -1,5 +1,5 @@
 import React from 'react';
-import Something from 'assets/Something.png';
+import Something from '@assets/Something.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -12,7 +12,10 @@ const Footer = () => {
 				<h2>Contact</h2>
 
 				<address>
-					<a className="footer-btn" href="mailto:selvia@gmail.com">
+					<a
+						className="footer-btn"
+						href="mailto:selvia@gmail.com"
+					>
 						Email Us
 					</a>
 				</address>
@@ -26,8 +29,8 @@ const Footer = () => {
 
 				<div className="legal-links">
 					<span>
-						Made with <span className="heart">♥</span> remotely from
-						Anywhere - FE-HE1
+						Made with <span className="heart">♥</span>{' '}
+						remotely from Anywhere - FE-HE1
 					</span>
 				</div>
 			</div>
