@@ -3,13 +3,12 @@ import { auth } from '../config/firebase/firebase';
 
 const login = async (passwordValue, EmailValue, callback) => {
 	try {
-		const user = await signInWithEmailAndPassword(
+		const response = await signInWithEmailAndPassword(
 			auth,
 			EmailValue,
 			passwordValue
 		);
-		console.log({ user });
-		callback(user);
+		callback(response.user);
 	} catch (error) {
 		console.log(error.message);
 	}

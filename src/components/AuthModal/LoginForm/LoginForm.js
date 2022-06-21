@@ -38,6 +38,7 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 
 		if (formIsValid) {
 			SERVICE_AUTH.login(passwordValue, EmailValue, (user) => {
+				console.log(user);
 				dispatch(authActions.login(user));
 			});
 		}

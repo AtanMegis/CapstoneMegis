@@ -32,7 +32,7 @@ const Header = (props) => {
 						onClickLoginButton={props.onShowLoginForm}
 					></HeaderButton>
 				)}
-				{isAuth && <div>Selamat Datang, {user}</div>}
+				{isAuth && <div>Selamat Datang, {user.email}</div>}
 				{isAuth && <button onClick={logoutHandler}>Logout</button>}
 			</div>
 			<Carousel />

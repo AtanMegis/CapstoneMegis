@@ -4,7 +4,6 @@ import Register from './RegisterForm/RegisterForm';
 import Modal from '../UI/Modal';
 
 const AuthModal = (props) => {
-	// const [isLoggedIn, setIsLoggedIn] = useState(false)
 	const AUTH_PAGES = {
 		LOGIN: 'login',
 		REGISTER: 'register',
@@ -19,11 +18,6 @@ const AuthModal = (props) => {
 				: AUTH_PAGES.LOGIN
 		);
 	};
-
-	// const loginHandler = () => {
-
-	//     dispatch(authActions.login())
-	// }
 
 	console.log(authPage);
 
@@ -40,10 +34,6 @@ const AuthModal = (props) => {
 					onClose={props.onClose}
 				/>
 			)}
-			{/* <button style={{ marginTop: "1rem" }} onClick={loginHandler} >
-                Masuk
-            </button>
-            <button onClick={props.onClose}>Keluar</button> */}
 		</Modal>
 	);
 };
