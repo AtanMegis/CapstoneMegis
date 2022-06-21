@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import AuthModal from "./components/AuthModal/AuthModal";
-import Router from "./Pages/router";
+import React, { useState } from 'react';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import AuthModal from './components/AuthModal/AuthModal';
+// import Router from './Pages/router';
 
 function App() {
 	const [LoginIsShown, setLoginIsShown] = useState(false);
@@ -16,14 +16,14 @@ function App() {
 	};
 
 	return (
-		<React.Fragment>
+		<>
 			{LoginIsShown && <AuthModal onClose={hideLoginHandler} />}
 			<Header onShowLoginForm={showLoginForm} />
 
-			<Router />
+			{/* <Router /> */}
 
 			<Footer />
-		</React.Fragment>
+		</>
 	);
 }
 

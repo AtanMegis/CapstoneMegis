@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import LoginForm from '../LoginForm/LoginForm';
-import Register from '../Register/Register';
+import LoginForm from './LoginForm/LoginForm';
+import Register from './RegisterForm/RegisterForm';
 import Modal from '../UI/Modal';
-import { authActions } from '../../config/redux/reducers/auth';
-import { useDispatch } from 'react-redux';
 
 const AuthModal = (props) => {
 	// const [isLoggedIn, setIsLoggedIn] = useState(false)
-	const dispatch = useDispatch();
 	const AUTH_PAGES = {
 		LOGIN: 'login',
 		REGISTER: 'register',
