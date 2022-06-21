@@ -1,23 +1,25 @@
-import React, { useState } from "react";
-import LoginForm from "../LoginForm/LoginForm";
-import Register from "../Register/Register";
-import Modal from "../UI/Modal";
-import { authActions } from "../../config/redux/reducers/auth";
-import { useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import LoginForm from '../LoginForm/LoginForm';
+import Register from '../Register/Register';
+import Modal from '../UI/Modal';
+import { authActions } from '../../config/redux/reducers/auth';
+import { useDispatch } from 'react-redux';
 
 const AuthModal = (props) => {
 	// const [isLoggedIn, setIsLoggedIn] = useState(false)
 	const dispatch = useDispatch();
 	const AUTH_PAGES = {
-		LOGIN: "login",
-		REGISTER: "register",
+		LOGIN: 'login',
+		REGISTER: 'register',
 	};
 	const [authPage, setAuthPage] = useState(AUTH_PAGES.LOGIN);
 
 	const handleChangeAuthPage = () => {
-		console.log("handleChangeAuthPage");
+		console.log('handleChangeAuthPage');
 		setAuthPage(
-			authPage === AUTH_PAGES.LOGIN ? AUTH_PAGES.REGISTER : AUTH_PAGES.LOGIN
+			authPage === AUTH_PAGES.LOGIN
+				? AUTH_PAGES.REGISTER
+				: AUTH_PAGES.LOGIN
 		);
 	};
 

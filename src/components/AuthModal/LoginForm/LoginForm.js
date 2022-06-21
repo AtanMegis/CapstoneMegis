@@ -1,15 +1,15 @@
-import React from "react";
-import useInput from "../../hooks/useInput";
-import Logo from "../../assets/UserLogo.png";
-import "./LoginForm.css";
-import { useDispatch } from "react-redux";
-import { authActions } from "../../config/redux/reducers/auth";
-import { SERVICE_AUTH } from "../../services/auth.service";
+import React from 'react';
+import useInput from '@hooks/useInput';
+import Logo from '@assets/UserLogo.png';
+import './LoginForm.css';
+import { useDispatch } from 'react-redux';
+import { authActions } from '@config/redux/reducers/auth';
+import { SERVICE_AUTH } from '@services/auth.service';
 
-const LoginForm = ({ onChangeAuthPage, onClose }) => {
+const LoginForm = ({ onchangeAuthPage, onClose }) => {
 	const dispatch = useDispatch();
-	const isNotEmpty = (value) => value.trim() !== "";
-	const isEmail = (value) => value.includes("@");
+	const isNotEmpty = (value) => value.trim() !== '';
+	const isEmail = (value) => value.includes('@');
 
 	const {
 		value: passwordValue,
@@ -40,27 +40,28 @@ const LoginForm = ({ onChangeAuthPage, onClose }) => {
 			SERVICE_AUTH.login(passwordValue, EmailValue, (user) => {
 				dispatch(authActions.login(user));
 			});
-
-			passwordResetHandler();
-			emailResetHandler();
-			onClose();
 		}
+		passwordResetHandler();
+		emailResetHandler();
+		onClose();
 	};
 
 	const passwordClasses = passwordHasError
-		? "form-control invalid"
-		: "form-control";
+		? 'form-control invalid'
+		: 'form-control';
 
-	const emailClasses = emailHasError ? "form-control invalid" : "form-control";
+	const emailClasses = emailHasError
+		? 'form-control invalid'
+		: 'form-control';
 
 	return (
 		<form className="form-layout" onSubmit={submitHandler}>
 			<img
 				alt=""
 				style={{
-					maxWidth: "225px",
-					alignSelf: "center",
-					padding: "2rem 0",
+					maxWidth: '225px',
+					alignSelf: 'center',
+					padding: '2rem 0',
 				}}
 				src={Logo}
 			></img>
@@ -75,7 +76,9 @@ const LoginForm = ({ onChangeAuthPage, onClose }) => {
 						value={EmailValue}
 					/>
 					{emailHasError && (
-						<p className="error-text">Please enter your Email</p>
+						<p className="error-text">
+							Please enter your Email
+						</p>
 					)}
 				</div>
 				<div className={passwordClasses}>
@@ -88,18 +91,26 @@ const LoginForm = ({ onChangeAuthPage, onClose }) => {
 						value={passwordValue}
 					/>
 					{passwordHasError && (
-						<p className="error-text">Please enter your Password</p>
+						<p className="error-text">
+							Please enter your Password
+						</p>
 					)}
 				</div>
 			</div>
-			<div>
-				<p>
-					Belum punya akun? register{" "}
-					<button onClick={onChangeAuthPage}>di sini</button>
-				</p>
-			</div>
+			<p>
+				Belum punya akun?{' '}
+				<button
+					className="button-disini"
+					onClick={onchangeAuthPage}
+				>
+					Register
+				</button>
+			</p>
 			<div className="form-actions">
-				<button style={{ marginTop: "1rem" }} disabled={!formIsValid}>
+				<button
+					style={{ marginTop: '1rem' }}
+					disabled={!formIsValid}
+				>
 					Masuk
 				</button>
 				<button onClick={onClose}>Keluar</button>

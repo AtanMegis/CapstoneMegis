@@ -1,17 +1,16 @@
-import React from "react";
-import useInput from "../../hooks/useInput";
-import Logo from "../../assets/UserLogo.png";
-import "./Register.css";
-import {
-	createUserWithEmailAndPassword,
-	getIdToken,
-	sendEmailVerification,
-} from "firebase/auth";
-import { auth } from "../../config/firebase/firebase";
+import React, { useState } from 'react';
+import useInput from '@hooks/useInput';
+import Logo from '@assets/UserLogo.png';
+import './RegisterForm.css';
+import { useDispatch } from 'react-redux';
+import { SERVICE_AUTH } from '@services/auth.service';
+import { authActions } from '@config/redux/reducers/auth';
 
-const Register = ({ onChangeAuthPage, onClose }) => {
-	const isNotEmpty = (value) => value.trim() !== "";
-	const isEmail = (value) => value.includes("@");
+const RegisterForm = ({ onchangeAuthPage, onClose }) => {
+	const dispatch = useDispatch();
+	const isNotEmpty = (value) => value.trim() !== '';
+	const isEmail = (value) => value.includes('@');
+	const [displayName, setDisplayName] = useState('');
 
 	const {
 		value: passwordValue,
@@ -32,7 +31,7 @@ const Register = ({ onChangeAuthPage, onClose }) => {
 	} = useInput(isNotEmpty);
 
 	const {
-		value: EmailValue,
+		value: emailValue,
 		hasError: emailHasError,
 		isValid: emailIsValid,
 		inputBlurHandler: emailBlurHandler,
@@ -58,55 +57,60 @@ const Register = ({ onChangeAuthPage, onClose }) => {
 	const submitHandler = async (e) => {
 		e.preventDefault();
 
-		try {
-			const user = await createUserWithEmailAndPassword(
-				auth,
-				EmailValue,
+		if (formIsValid) {
+			SERVICE_AUTH.register(
 				passwordValue,
-				passwordConfValue
-			).then((response) => {
-				sendEmailVerification();
-				getIdToken();
-				console.log(response, "mohon verifikasi email anda !");
-			});
-			console.log("user Sign Up :", user);
-		} catch (error) {
-			console.log(error);
+				emailValue,
+				passwordConfValue,
+				displayName,
+				(user) => {
+					dispatch(authActions.login(user));
+				}
+			);
+			passwordResetHandler();
+			passwordConfResetHandler();
+			emailResetHandler();
+			onClose();
 		}
-
-		if (!formIsValid) {
-			return;
-		}
-		console.log("submitted!");
-		console.log(passwordValue, EmailValue);
-		emailResetHandler();
-		passwordConfResetHandler();
-		passwordResetHandler();
-		onClose();
 	};
 
 	const passwordClasses = passwordHasError
-		? "form-control invalid"
-		: "form-control";
+		? 'form-control invalid'
+		: 'form-control';
 
-	const emailClasses = emailHasError ? "form-control invalid" : "form-control";
+	const emailClasses = emailHasError
+		? 'form-control invalid'
+		: 'form-control';
 
 	const passwordConfClasses = passwordConfHasError
-		? "form-control invalid"
-		: "form-control";
+		? 'form-control invalid'
+		: 'form-control';
+
+	const displayNameHandler = (e) => {
+		setDisplayName(e.target.value);
+	};
 
 	return (
-		<form onSubmit={submitHandler}>
+		<form className="form-layout" onSubmit={submitHandler}>
 			<img
 				alt=""
 				style={{
-					maxWidth: "225px",
-					alignSelf: "center",
-					padding: "2rem 0",
+					maxWidth: '225px',
+					alignSelf: 'center',
+					padding: '2rem 0',
 				}}
 				src={Logo}
 			></img>
 			<div className="control-group">
+				<div className={emailClasses}>
+					<label htmlFor="name">Nama Lengkap</label>
+					<input
+						type="text"
+						id="name"
+						onChange={displayNameHandler}
+						value={displayName}
+					/>
+				</div>
 				<div className={emailClasses}>
 					<label htmlFor="name">Email</label>
 					<input
@@ -114,10 +118,12 @@ const Register = ({ onChangeAuthPage, onClose }) => {
 						id="name"
 						onChange={emailChangeHandler}
 						onBlur={emailBlurHandler}
-						value={EmailValue}
+						value={emailValue}
 					/>
 					{emailHasError && (
-						<p className="error-text">Please enter your Email</p>
+						<p className="error-text">
+							Please enter your Email
+						</p>
 					)}
 				</div>
 			</div>
@@ -131,11 +137,13 @@ const Register = ({ onChangeAuthPage, onClose }) => {
 					value={passwordValue}
 				/>
 				{passwordHasError && (
-					<p className="error-text">Please enter your Password</p>
+					<p className="error-text">
+						Please enter your Password
+					</p>
 				)}
 			</div>
 			<div className={passwordConfClasses}>
-				<label htmlFor="name">Password</label>
+				<label htmlFor="name">Konfirmasi ulang password</label>
 				<input
 					type="text"
 					id="name"
@@ -144,17 +152,25 @@ const Register = ({ onChangeAuthPage, onClose }) => {
 					value={passwordConfValue}
 				/>
 				{passwordConfHasError && (
-					<p className="error-text">Please Confirm your password</p>
+					<p className="error-text">
+						Please Confirm your password
+					</p>
 				)}
 			</div>
-			<div>
-				<p>
-					Sudah punya akun? login{" "}
-					<button onClick={onChangeAuthPage}>di sini</button>
-				</p>
-			</div>
+			<p>
+				Sudah punya akun?{' '}
+				<button
+					className="button-disini"
+					onClick={onchangeAuthPage}
+				>
+					Login
+				</button>
+			</p>
 			<div className="form-actions">
-				<button style={{ marginTop: "1rem" }} disabled={!formIsValid}>
+				<button
+					style={{ marginTop: '1rem' }}
+					disabled={!formIsValid}
+				>
 					Daftar
 				</button>
 				<button onClick={onClose}>Keluar</button>
@@ -163,4 +179,4 @@ const Register = ({ onChangeAuthPage, onClose }) => {
 	);
 };
 
-export default Register;
+export default RegisterForm;
