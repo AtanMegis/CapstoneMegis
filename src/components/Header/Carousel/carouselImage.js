@@ -1,23 +1,23 @@
-import First from '../../../assets/First.jpg';
-import Second from '../../../assets/Second.jpg';
-import Third from '../../../assets/Third.jpg';
+import carousel1 from '@assets/carousel1.jpg';
+import carousel2 from '@assets/carousel2.jpg';
+import carousel3 from '@assets/carousel3.jpg';
 
 let carouselImage = [
-    {
-        title: 'First Slide Image',
-        description: 'Stunting is ....',
-        urls: First,
-    },
-    {
-        title: 'Second Slide Image',
-        description: 'Stunting is ....',
-        urls: Second,
-    },
-    {
-        title: 'Third Slide Image',
-        description: 'Stunting is ....',
-        urls: Third,
-    },
+	{
+		title: 'Love is passion',
+		description: 'Nothing bigger than mother`s love',
+		urls: carousel1,
+	},
+	{
+		title: 'Gift',
+		description: 'Stunting is ....',
+		urls: carousel2,
+	},
+	{
+		title: 'Third Slide Image',
+		description: 'Stunting is ....',
+		urls: carousel3,
+	},
 ];
 
 export default carouselImage;

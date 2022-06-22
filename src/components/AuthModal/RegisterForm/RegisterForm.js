@@ -62,7 +62,6 @@ const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 				passwordValue,
 				emailValue,
 				passwordConfValue,
-				displayName,
 				(user) => {
 					dispatch(authActions.login(user));
 				}
@@ -102,7 +101,7 @@ const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 				src={Logo}
 			></img>
 			<div className="control-group">
-				<div className={emailClasses}>
+				<div className={passwordClasses}>
 					<label htmlFor="name">Nama Lengkap</label>
 					<input
 						type="text"
@@ -130,7 +129,7 @@ const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 			<div className={passwordClasses}>
 				<label htmlFor="name">Password</label>
 				<input
-					type="text"
+					type="password"
 					id="name"
 					onChange={passwordChangeHandler}
 					onBlur={passwordBlurHandler}
@@ -145,7 +144,7 @@ const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 			<div className={passwordConfClasses}>
 				<label htmlFor="name">Konfirmasi ulang password</label>
 				<input
-					type="text"
+					type="password"
 					id="name"
 					onChange={passwordConfChangeHandler}
 					onBlur={passwordConfBlurHandler}

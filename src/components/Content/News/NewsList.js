@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import NewsItem from './NewsItem';
@@ -11,7 +11,6 @@ const NewsList = () => {
 			const response = await axios.get(
 				'https://62a6e5a797b6156bff81e2bc.mockapi.io/berita'
 			);
-			// console.log(response)
 			setArticles(response.data);
 		};
 		getArticles();

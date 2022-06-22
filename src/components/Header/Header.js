@@ -10,13 +10,13 @@ const Header = (props) => {
 	const dispatch = useDispatch();
 	const isAuth = useSelector((state) => state.auth.isAuthenticated);
 	const user = useSelector((state) => state.auth.user);
-	// const userName = auth.currentUser.displayName;
-	const logoutHandler = (e) => {
+
+	const logoutHandler = () => {
 		dispatch(authActions.logout());
 	};
 
 	return (
-		<React.Fragment>
+		<>
 			<div style={{}} className={classes.header}>
 				<img
 					alt="SOMETHING IS EVERYTHING"
@@ -37,7 +37,7 @@ const Header = (props) => {
 				{isAuth && <button onClick={logoutHandler}>Logout</button>}
 			</div>
 			<Carousel />
-		</React.Fragment>
+		</>
 	);
 };
 

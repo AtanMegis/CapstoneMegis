@@ -3,6 +3,13 @@ import classes from './ProductsList.module.css';
 import ProductItem from './ProductItem';
 
 const ProductList = () => {
+	// const PRODUCT_TYPE = {
+	// 	STUNTING: 'STUNTING',
+	// 	MPASI: 'MPASI',
+	// 	BERITA: 'BERITA',
+	// 	GIZI: 'GIZI',
+	// };
+
 	const DUMMY_PRODUCTS = [
 		{
 			id: 'm1',

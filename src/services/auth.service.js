@@ -2,7 +2,6 @@ import {
 	signInWithEmailAndPassword,
 	createUserWithEmailAndPassword,
 	sendEmailVerification,
-	getIdToken,
 } from 'firebase/auth';
 import { auth } from '@config/firebase/firebase';
 
@@ -25,12 +24,10 @@ const register = async (
 	passwordValue,
 	emailValue,
 	passwordConfValue,
-	displayName,
 	callback
 ) => {
 	try {
 		const user = await createUserWithEmailAndPassword(
-			displayName,
 			auth,
 			emailValue,
 			passwordValue,

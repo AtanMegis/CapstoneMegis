@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import classes from './ProductItem.module.css';
 
-const ProductItem = ({ title, url }) => {
+const ProductItem = ({ title, url, id }) => {
 	return (
 		<div className={classes['card-container']}>
 			<div className={classes['image-container']}>
@@ -19,9 +20,12 @@ const ProductItem = ({ title, url }) => {
 					eiusmod tempor incididunt ut labore et, consectetur
 					adipiscing elit, sed do eiusmod tempor inc
 				</p>
-				<button className={classes['button-body']}>
+				<Link
+					className={classes['button-body']}
+					to={`/product/${id}`}
+				>
 					Baca selengkapnya..
-				</button>
+				</Link>
 			</div>
 		</div>
 	);

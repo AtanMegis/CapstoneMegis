@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useInput from '@hooks/useInput';
 import Logo from '@assets/UserLogo.png';
 import './LoginForm.css';
@@ -7,6 +7,7 @@ import { authActions } from '@config/redux/reducers/auth';
 import { SERVICE_AUTH } from '@services/auth.service';
 
 const LoginForm = ({ onchangeAuthPage, onClose }) => {
+	const [showPassword, setShowPassword] = useState(false);
 	const dispatch = useDispatch();
 	const isNotEmpty = (value) => value.trim() !== '';
 	const isEmail = (value) => value.includes('@');
@@ -54,6 +55,10 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 		? 'form-control invalid'
 		: 'form-control';
 
+	const togglePassword = () => {
+		setShowPassword(!showPassword);
+	};
+
 	return (
 		<form className="form-layout" onSubmit={submitHandler}>
 			<img
@@ -84,11 +89,12 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 				<div className={passwordClasses}>
 					<label htmlFor="name">Password</label>
 					<input
-						type="text"
+						type={showPassword ? 'text' : 'password'}
 						id="name"
 						onChange={passwordChangeHandler}
 						onBlur={passwordBlurHandler}
 						value={passwordValue}
+						onClick={togglePassword}
 					/>
 					{passwordHasError && (
 						<p className="error-text">
