@@ -3,37 +3,34 @@ import classes from './ProductsList.module.css';
 import ProductItem from './ProductItem';
 
 const ProductList = () => {
-	// const PRODUCT_TYPE = {
-	// 	STUNTING: 'STUNTING',
-	// 	MPASI: 'MPASI',
-	// 	BERITA: 'BERITA',
-	// 	GIZI: 'GIZI',
-	// };
-
 	const DUMMY_PRODUCTS = [
 		{
 			id: 'm1',
 			title: 'Apa itu Stunting',
 			body: 'LOREM IPSUMM',
 			url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg',
+			to: '/stunting',
 		},
 		{
 			id: 'm2',
 			title: 'Berita Terkini',
 			body: 'LOREM IPSUMM',
 			url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg',
+			to: '/berita',
 		},
 		{
 			id: 'm3',
 			title: 'Informasi Gizi',
 			body: 'LOREM IPSUMM',
 			url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg',
+			to: '/informasigizi',
 		},
 		{
 			id: 'm4',
 			title: 'MPASI',
 			body: 'MPASI',
 			url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg',
+			to: '/mpasi',
 		},
 	];
 
@@ -44,6 +41,7 @@ const ProductList = () => {
 			title={item.title}
 			body={item.body}
 			url={item.url}
+			to={item.to}
 		/>
 	));
 

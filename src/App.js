@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import AuthModal from './components/AuthModal/AuthModal';
+import Header from '@components/Header/Header';
+import Footer from '@components/Footer/Footer';
+import AuthModal from '@components/AuthModal/AuthModal';
 import Home from '@pages/Home/Home';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import HomeDetail from '@pages/Home/HomeDetail';
-
-// import Stunting from '@components/Content/Stunting/Stunting';
-// import NewsList from '@components/Content/News/NewsList';
-// import Chat from '@components/Chat/Chat';
+import Stunting from '@components/Content/Stunting/Stunting';
+import NewsList from '@components/Content/News/NewsList';
+import GiziList from '@components/Content/Gizi/GiziList';
 
 function App() {
 	const [LoginIsShown, setLoginIsShown] = useState(false);
@@ -32,9 +30,16 @@ function App() {
 				<Route path="/home" exact>
 					<Home />
 				</Route>
-				<Route path="/product/:id">
-					<HomeDetail />
+				<Route path="/stunting">
+					<Stunting />
 				</Route>
+				<Route path="/berita">
+					<NewsList />
+				</Route>
+				<Route path="/informasigizi">
+					<GiziList />
+				</Route>
+				<Route path="mpasi"></Route>
 			</Switch>
 			<Footer />
 		</>

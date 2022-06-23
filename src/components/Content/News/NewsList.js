@@ -5,29 +5,52 @@ import NewsItem from './NewsItem';
 
 const NewsList = () => {
 	const [articles, setArticles] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		const getArticles = async () => {
-			const response = await axios.get(
-				'https://62a6e5a797b6156bff81e2bc.mockapi.io/berita'
-			);
-			setArticles(response.data);
-		};
-		getArticles();
+		setIsLoading(true);
+		try {
+			const getArticles = async () => {
+				const response = await axios.get(
+					'https://62a6e5a797b6156bff81e2bc.mockapi.io/berita'
+				);
+
+				let responseOK =
+					response &&
+					response.status === 200 &&
+					response.statusText === 'OK';
+
+				if (!responseOK) {
+					throw new Error('Request failed!');
+				}
+				setArticles(response.data);
+			};
+			getArticles();
+		} catch (err) {
+			setError(err.message || 'Something went wrong !!!');
+			setIsLoading(false);
+		}
+		setIsLoading(false);
 	}, []);
 
 	return (
 		<div className={{}}>
-			{articles.map((data) => (
-				<NewsItem
-					key={data.id}
-					id={data.id}
-					title={data.title}
-					description={data.description}
-					url={data.url}
-					urlToImage={data.urlToImage}
-				/>
-			))}
+			<h1 style={{ fontSize: '50px' }}>Berita Terkini !</h1>
+			<hr />
+			{error && <p>{error}</p>}
+			{isLoading && <h1> Loading ...</h1>}
+			{!isLoading &&
+				articles.map((data) => (
+					<NewsItem
+						key={data.id}
+						id={data.id}
+						title={data.title}
+						description={data.description}
+						url={data.url}
+						urlToImage={data.urlToImage}
+					/>
+				))}
 		</div>
 	);
 };
