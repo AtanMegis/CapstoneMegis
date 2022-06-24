@@ -7,7 +7,7 @@ import './carousel.css';
 
 const len = carouselImage.length - 1;
 
-const Carousel = (props) => {
+const Carousel = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {

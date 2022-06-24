@@ -7,6 +7,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Stunting from '@components/Content/Stunting/Stunting';
 import NewsList from '@components/Content/News/NewsList';
 import GiziList from '@components/Content/Gizi/GiziList';
+import About from '@pages/About/About';
 
 function App() {
 	const [LoginIsShown, setLoginIsShown] = useState(false);
@@ -40,6 +41,9 @@ function App() {
 					<GiziList />
 				</Route>
 				<Route path="mpasi"></Route>
+				<Route path="/about" exact>
+					<About />
+				</Route>
 			</Switch>
 			<Footer />
 		</>
