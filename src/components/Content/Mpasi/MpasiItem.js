@@ -1,8 +1,8 @@
 import React from 'react';
 
-const NewsItem = ({ title, description, url, urlToImage }) => {
+const MpasiItem = ({ title, urlToImage, description }) => {
 	return (
-		<div className="main-wrapper">
+		<>
 			<div className="main-container">
 				<div className="container">
 					<div>
@@ -14,14 +14,14 @@ const NewsItem = ({ title, description, url, urlToImage }) => {
 					</div>
 					<div>
 						<h3>
-							<a href={url}>{title}</a>
+							<p>{title}</p>
 						</h3>
 						<p>{description}</p>
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
-export default NewsItem;
+export default MpasiItem;

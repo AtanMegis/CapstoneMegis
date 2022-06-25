@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import Header from '@components/Header/Header';
 import Footer from '@components/Footer/Footer';
 import AuthModal from '@components/AuthModal/AuthModal';
-import Home from './Pages/Home/Home';
+
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Stunting from '@components/Content/Stunting/Stunting';
 import NewsList from '@components/Content/News/NewsList';
 import GiziList from '@components/Content/Gizi/GiziList';
-import About from './Pages/About/About';
+// import * as Sentry from '@sentry/react';
+import NotFound from '@pages/NotFound/NotFound';
+import About from '@pages/About/About';
+import MpasiList from '@components/Content/Mpasi/MpasiList';
+import Home from '@pages/Home/Home';
 
 function App() {
 	const [LoginIsShown, setLoginIsShown] = useState(false);
@@ -20,8 +24,13 @@ function App() {
 		setLoginIsShown(false);
 	};
 
+	// const FallbackComponent = () => {
+	// 	return <div>An error has occured</div>;
+	// };
+
 	return (
 		<>
+			{/* <Sentry.ErrorBoundary fallback={FallbackComponent}> */}
 			{LoginIsShown && <AuthModal onClose={hideLoginHandler} />}
 			<Header onShowLoginForm={showLoginForm} />
 			<Switch>
@@ -30,6 +39,9 @@ function App() {
 				</Route>
 				<Route path="/home" exact>
 					<Home />
+				</Route>
+				<Route path="/about" exact>
+					<About />
 				</Route>
 				<Route path="/stunting">
 					<Stunting />
@@ -40,12 +52,15 @@ function App() {
 				<Route path="/informasigizi">
 					<GiziList />
 				</Route>
-				<Route path="mpasi"></Route>
-				<Route path="/about" exact>
-					<About />
+				<Route path="/mpasi">
+					<MpasiList />
+				</Route>
+				<Route path="*">
+					<NotFound />
 				</Route>
 			</Switch>
 			<Footer />
+			{/* </Sentry.ErrorBoundary> */}
 		</>
 	);
 }

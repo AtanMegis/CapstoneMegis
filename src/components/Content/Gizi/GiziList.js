@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import GiziItem from './GiziItem';
+import mockapi from 'src/lib/mockapi';
 import classes from './GiziList.module.css';
 
 const GiziList = () => {
 	const [gizi, setGizi] = useState([]);
 	useEffect(() => {
 		const getGizi = async () => {
-			const response = await axios.get(
-				'https://62a6e5a797b6156bff81e2bc.mockapi.io/gizi'
-			);
+			const response = await axios.get(`${mockapi}/gizi`);
 			setGizi(response.data);
 		};
 		getGizi();

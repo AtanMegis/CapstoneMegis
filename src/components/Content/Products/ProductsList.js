@@ -1,51 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './ProductsList.module.css';
 import ProductItem from './ProductItem';
+import axios from 'axios';
+import mockapi from 'src/lib/mockapi';
 
 const ProductList = () => {
-	const DUMMY_PRODUCTS = [
-		{
-			id: 'm1',
-			title: 'Apa itu Stunting',
-			body: 'LOREM IPSUMM',
-			url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg',
-			to: '/stunting',
-		},
-		{
-			id: 'm2',
-			title: 'Berita Terkini',
-			body: 'LOREM IPSUMM',
-			url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg',
-			to: '/berita',
-		},
-		{
-			id: 'm3',
-			title: 'Informasi Gizi',
-			body: 'LOREM IPSUMM',
-			url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg',
-			to: '/informasigizi',
-		},
-		{
-			id: 'm4',
-			title: 'MPASI',
-			body: 'MPASI',
-			url: 'https://mdbootstrap.com/img/Photos/Slides/img%20(105).jpg',
-			to: '/mpasi',
-		},
-	];
+	const [products, setProducts] = useState([]);
 
-	const dummyProduct = DUMMY_PRODUCTS.map((item) => (
-		<ProductItem
-			key={item.id}
-			id={item.id}
-			title={item.title}
-			body={item.body}
-			url={item.url}
-			to={item.to}
-		/>
-	));
+	useEffect(() => {
+		const getProducts = async () => {
+			const response = await axios.get(`${mockapi}/products`);
+			setProducts(response.data);
+		};
+		getProducts();
+	}, []);
 
-	return <div className={classes['wrapper']}>{dummyProduct}</div>;
+	return (
+		<>
+			<div className={classes['wrapper']}></div>;
+			{products.map((item) => (
+				<ProductItem
+					key={item.id}
+					id={item.id}
+					title={item.title}
+					body={item.body}
+					url={item.url}
+					to={item.to}
+				/>
+			))}
+		</>
+	);
 };
 
 export default ProductList;
