@@ -15,7 +15,7 @@
 
 .button:hover,
 .button:active {
-	background-color: #fff;
+	background-color: #9f9f9f;
 }
 
 /* @keyframes bump {

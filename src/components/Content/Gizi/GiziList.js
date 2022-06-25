@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import GiziItem from './GiziItem';
+import classes from './GiziList.module.css';
 
 const GiziList = () => {
 	const [gizi, setGizi] = useState([]);
@@ -17,8 +18,8 @@ const GiziList = () => {
 	return (
 		<>
 			(
-			<div className={{}}>
-				<h1 style={{ fontSize: '50px' }}>Informasi Gizi</h1>
+			<div className={classes['wrapper']}>
+				<h1>Informasi Gizi</h1>
 				<hr />
 				{gizi.map((data) => (
 					<GiziItem

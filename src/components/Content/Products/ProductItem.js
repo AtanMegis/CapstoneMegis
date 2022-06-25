@@ -25,7 +25,9 @@ const ProductItem = ({ title, url, to }) => {
 					className={classes['button-body']}
 					to={to}
 				>
-					Baca selengkapnya..
+					<button class="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4">
+						Baca Selengkapnya
+					</button>
 				</NavLink>
 			</div>
 		</div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import classes from './NewsList.module.css';
 import NewsItem from './NewsItem';
 
 const NewsList = () => {
@@ -35,8 +36,8 @@ const NewsList = () => {
 	}, []);
 
 	return (
-		<div className={{}}>
-			<h1 style={{ fontSize: '50px' }}>Berita Terkini !</h1>
+		<div className={classes['wrapper']}>
+			<h1>Berita Terkini !</h1>
 			<hr />
 			{error && <p>{error}</p>}
 			{isLoading && <h1> Loading ...</h1>}

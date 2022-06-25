@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Header from '@components/Header/Header';
 import Footer from '@components/Footer/Footer';
 import AuthModal from '@components/AuthModal/AuthModal';
-import Home from '@pages/Home/Home';
+import Home from './Pages/Home/Home';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Stunting from '@components/Content/Stunting/Stunting';
 import NewsList from '@components/Content/News/NewsList';
 import GiziList from '@components/Content/Gizi/GiziList';
-import About from '@pages/About/About';
+import About from './Pages/About/About';
 
 function App() {
 	const [LoginIsShown, setLoginIsShown] = useState(false);

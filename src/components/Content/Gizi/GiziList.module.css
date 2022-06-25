@@ -1,0 +1,51 @@
+.gizi {
+	display: flex;
+	justify-content: center;
+}
+
+.gizi:first-child {
+	padding-top: 1rem;
+}
+
+.gizi-item {
+	display: flex;
+	flex-direction: row;
+	max-width: 75%;
+	gap: 1rem;
+	padding: 20px;
+	border: 1px solid;
+	border-radius: 12px;
+	margin-bottom: 20px;
+}
+
+.gizi-img {
+	object-fit: cover;
+	width: 200px;
+	height: 100px;
+	border-radius: 12px;
+}
+.wrapper {
+	display: block;
+	padding: 0 5rem;
+}
+
+p {
+	line-height: 1.5rem;
+}
+
+h3 {
+	padding-bottom: 15px;
+}
+
+h1 {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+hr {
+	padding-bottom: 20px;
+	border-top: 2.5px solid #00525f;
+	border-bottom: 0px;
+	border-left: 0px;
+	border-right: 0px;
+}
