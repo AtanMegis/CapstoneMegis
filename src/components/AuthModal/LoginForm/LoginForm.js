@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useInput from '@hooks/useInput';
 import Logo from '@assets/UserLogo.png';
 import './LoginForm.css';
@@ -7,7 +7,7 @@ import { authActions } from '@config/redux/reducers/auth';
 import { SERVICE_AUTH } from '@services/auth.service';
 
 const LoginForm = ({ onchangeAuthPage, onClose }) => {
-	const [showPassword, setShowPassword] = useState(false);
+	// const [showPassword, setShowPassword] = useState(false);
 	const dispatch = useDispatch();
 	const isNotEmpty = (value) => value.trim() !== '';
 	const isEmail = (value) => value.includes('@');
@@ -55,9 +55,9 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 		? 'form-control invalid'
 		: 'form-control';
 
-	const togglePassword = () => {
-		setShowPassword(!showPassword);
-	};
+	// const togglePassword = () => {
+	// 	setShowPassword(!showPassword);
+	// };
 
 	return (
 		<form className="form-layout" onSubmit={submitHandler}>
@@ -75,7 +75,7 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 					<label htmlFor="name">Email</label>
 					<input
 						type="email"
-						id="name"
+						id="321"
 						onChange={emailChangeHandler}
 						onBlur={emailBlurHandler}
 						value={EmailValue}
@@ -89,8 +89,8 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 				<div className={passwordClasses}>
 					<label htmlFor="name">Password</label>
 					<input
-						type={showPassword ? 'text' : 'password'}
-						id="name"
+						// type={showPassword ? 'text' : 'password'}
+						id="123"
 						onChange={passwordChangeHandler}
 						onBlur={passwordBlurHandler}
 						value={passwordValue}
@@ -114,20 +114,20 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 			</p>
 			<div className="form-actions">
 				{formIsValid ? (
-					<button class="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4">
+					<button className="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4">
 						Masuk
 					</button>
 				) : (
 					<button
 						disabled
-						class="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4 opacity-50 cursor-not-allowed"
+						className="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4 opacity-50 cursor-not-allowed"
 					>
 						Masuk
 					</button>
 				)}
 
 				<button
-					class="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4"
+					className="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4"
 					onClick={onClose}
 				>
 					Keluar

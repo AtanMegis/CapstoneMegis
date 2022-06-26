@@ -167,20 +167,20 @@ const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 			</p>
 			<div className="form-actions">
 				{formIsValid ? (
-					<button class="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4">
+					<button className="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4">
 						Daftar
 					</button>
 				) : (
 					<button
 						disabled
-						class="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4 opacity-50 cursor-not-allowed"
+						className="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4 opacity-50 cursor-not-allowed"
 					>
 						Daftar
 					</button>
 				)}
 
 				<button
-					class="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4"
+					className="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 px-4 rounded my-4"
 					onClick={onClose}
 				>
 					Keluar
