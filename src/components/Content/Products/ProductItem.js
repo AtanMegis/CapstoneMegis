@@ -21,7 +21,9 @@ const ProductItem = ({ title, url, to, body }) => {
 					className={classes['button-body']}
 					to={to}
 				>
-					Selengkapnya
+					<button className="bg-someting-green hover:bg-someting-dark-green text-white font-bold py-2 mt-8 px-6 rounded my-4">
+						Selengkapnya
+					</button>
 				</NavLink>
 			</div>
 		</div>

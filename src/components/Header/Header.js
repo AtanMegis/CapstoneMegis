@@ -5,6 +5,7 @@ import Carousel from './Carousel/Carousel';
 import classes from './Header.module.css';
 import HeaderButton from './HeaderButton';
 import { useSelector, useDispatch } from 'react-redux';
+import classesButton from './HeaderButton.module.css';
 
 const Header = (props) => {
 	const dispatch = useDispatch();
@@ -34,7 +35,14 @@ const Header = (props) => {
 					/>
 				)}
 				{isAuth && <div>Selamat Datang, {user}</div>}
-				{isAuth && <button onClick={logoutHandler}>Logout</button>}
+				{isAuth && (
+					<button
+						className={classesButton.button}
+						onClick={logoutHandler}
+					>
+						Logout
+					</button>
+				)}
 			</div>
 			<Carousel />
 		</>

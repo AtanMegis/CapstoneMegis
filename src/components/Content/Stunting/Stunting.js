@@ -5,7 +5,7 @@ import classes from './stunting.module.css';
 const Stunting = () => {
 	return (
 		<div className={classes['wrapper']}>
-			<h1>STUNTING</h1>
+			<h1>Stunting</h1>
 			<hr />
 			<div className={classes['content-main']}>
 				<section>
@@ -21,7 +21,7 @@ const Stunting = () => {
 					</p>
 				</section>
 				<div className={classes['img-container']}>
-					<img alt="" src={stunting} />
+					<img className="shadow-lg" alt="" src={stunting} />
 					<p>
 						Masalah stunting dipengaruhi oleh rendahnya akses
 						terhadap makanan dari segi jumlah dan kualitas

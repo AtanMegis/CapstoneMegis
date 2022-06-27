@@ -17,17 +17,19 @@ const ProductList = () => {
 
 	return (
 		<>
-			<div className={classes['wrapper']}></div>;
-			{products.map((item) => (
-				<ProductItem
-					key={item.id}
-					id={item.id}
-					title={item.title}
-					body={item.body}
-					url={item.url}
-					to={item.to}
-				/>
-			))}
+			<div className={classes['wrapper']}>
+				;
+				{products.map((item) => (
+					<ProductItem
+						key={item.id}
+						id={item.id}
+						title={item.title}
+						body={item.body}
+						url={item.url}
+						to={item.to}
+					/>
+				))}
+			</div>
 		</>
 	);
 };

@@ -62,7 +62,7 @@ const NewsList = () => {
 
 	return (
 		<div className={classes['wrapper']}>
-			<h1>Berita Terkini !</h1>
+			<h1>Berita Terkini</h1>
 			<hr />
 			{error && <ErrorModal onClose={clearError}>{error}</ErrorModal>}
 			{isLoading && <LoadingSpinner />}

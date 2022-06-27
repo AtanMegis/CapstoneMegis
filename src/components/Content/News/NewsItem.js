@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './NewsItem.module.css';
 
 const NewsItem = ({ title, description, url, urlToImage }) => {
 	return (
@@ -7,7 +8,7 @@ const NewsItem = ({ title, description, url, urlToImage }) => {
 				<div className="container">
 					<div>
 						<img
-							className="container-img"
+							className={classes['container-img']}
 							src={urlToImage}
 							alt={urlToImage}
 						/>

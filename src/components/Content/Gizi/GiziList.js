@@ -15,23 +15,19 @@ const GiziList = () => {
 	}, []);
 
 	return (
-		<>
-			(
-			<div className={classes['wrapper']}>
-				<h1>Informasi Gizi</h1>
-				<hr />
-				{gizi.map((data) => (
-					<GiziItem
-						key={data.id}
-						id={data.id}
-						title={data.title}
-						description={data.description}
-						urlToImage={data.urlToImage}
-					/>
-				))}
-			</div>
-			);
-		</>
+		<div className={classes['wrapper']}>
+			<h1>Informasi Gizi</h1>
+			<hr />
+			{gizi.map((data) => (
+				<GiziItem
+					key={data.id}
+					id={data.id}
+					title={data.title}
+					description={data.description}
+					urlToImage={data.urlToImage}
+				/>
+			))}
+		</div>
 	);
 };
 

@@ -1,6 +1,6 @@
 .wrapper {
 	display: block;
-	padding: 5rem;
+	padding: 2rem 5rem;
 }
 
 .content-main {
@@ -12,18 +12,19 @@
 }
 
 .img-container {
-	height: 250px;
+	height: 200px;
 	display: flex;
 	gap: 1rem;
 }
 
 p {
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 2rem;
 }
 
 h3 {
 	padding-bottom: 15px;
+	font-size: 30px;
 }
 
 h1 {
