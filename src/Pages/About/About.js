@@ -4,6 +4,7 @@ import Muti from '@assets/muti.jpeg';
 import Selvia from '@assets/selvia.png';
 import Megis from '@assets/megis.jpeg';
 import Thoriq from '@assets/thoriqq.jpeg';
+import Vaia from '@assets/vaia.jpg';
 import './About.css';
 
 const About = () => {
@@ -122,7 +123,7 @@ const About = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
+									src={Vaia}
 									className="rounded-circle z-depth-1 img-fluid"
 								/>
 							</div>

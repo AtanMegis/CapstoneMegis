@@ -114,7 +114,7 @@ const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 					<label htmlFor="name">Email</label>
 					<input
 						type="email"
-						id="name"
+						id="current--email"
 						onChange={emailChangeHandler}
 						onBlur={emailBlurHandler}
 						value={emailValue}
@@ -130,7 +130,8 @@ const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 				<label htmlFor="name">Password</label>
 				<input
 					type="password"
-					id="name"
+					id="password"
+					autoComplete="on"
 					onChange={passwordChangeHandler}
 					onBlur={passwordBlurHandler}
 					value={passwordValue}
@@ -145,7 +146,8 @@ const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 				<label htmlFor="name">Konfirmasi ulang password</label>
 				<input
 					type="password"
-					id="name"
+					id="password-conf"
+					autoComplete="on"
 					onChange={passwordConfChangeHandler}
 					onBlur={passwordConfBlurHandler}
 					value={passwordConfValue}

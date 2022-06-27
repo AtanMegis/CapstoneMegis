@@ -75,7 +75,7 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 					<label htmlFor="name">Email</label>
 					<input
 						type="email"
-						id="321"
+						id="email"
 						onChange={emailChangeHandler}
 						onBlur={emailBlurHandler}
 						value={EmailValue}
@@ -90,7 +90,9 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 					<label htmlFor="name">Password</label>
 					<input
 						// type={showPassword ? 'text' : 'password'}
-						id="123"
+						type="password"
+						id="password"
+						autoComplete="on"
 						onChange={passwordChangeHandler}
 						onBlur={passwordBlurHandler}
 						value={passwordValue}
