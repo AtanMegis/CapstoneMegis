@@ -4,6 +4,23 @@
 	margin: auto;
 	height: 120px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	padding-top: 2rem;
+}
+
+/* .navbar {
+    display: block;
+} */
+
+.navbar_list .navbar_item {
+    display: inline-block;
+}
+
+.navbar_list .navbar_item a {
+	/* justify-content: flex-end; */
+    text-decoration: none;
+    padding: 1rem;
+   	color: #fff;
+    font-weight: 700;
+	display: flex;
 }

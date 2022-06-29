@@ -11,7 +11,6 @@ const DataTerkini = () => {
 							<h3>Presentasi Data Balita Kekurangan gizi</h3>
 						</div>
 					</div>
-
 					<div className="data-card">
 						<div className="card">
 							<div className="avatar">

@@ -26,23 +26,32 @@ const Header = (props) => {
 						height: '60px',
 						maxWidth: '310px',
 						paddingLeft: '2rem',
+						justifyContent: 'flex-start',
+						
 					}}
 					src={Something}
 				></img>
-				{!isAuth && (
-					<HeaderButton
-						onClickLoginButton={props.onShowLoginForm}
-					/>
-				)}
-				{isAuth && <div>Selamat Datang, {user}</div>}
-				{isAuth && (
-					<button
-						className={classesButton.button}
-						onClick={logoutHandler}
-					>
-						Logout
-					</button>
-				)}
+					<nav className={classes.navbar}>
+						<ul className={classes.navbar_list}>
+							<li className={classes.navbar_item}><a href="/">HOME</a></li>
+							<li className={classes.navbar_item}><a href="/about">ABOUT</a></li>
+						</ul>
+					</nav>
+					
+					{!isAuth && (
+						<HeaderButton
+							onClickLoginButton={props.onShowLoginForm}
+						/>
+					)}
+					{isAuth && <div>Selamat Datang, {user}</div>}
+					{isAuth && (
+						<button
+							className={classesButton.button}
+							onClick={logoutHandler}
+						>
+							Logout
+						</button>
+					)}
 			</div>
 			<Carousel />
 		</>
