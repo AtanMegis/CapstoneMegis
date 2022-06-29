@@ -4,23 +4,22 @@
 	margin: auto;
 	height: 120px;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	padding-top: 2rem;
 }
 
-/* .navbar {
-    display: block;
-} */
+.navbar {
+	display: flex;
+}
 
 .navbar_list .navbar_item {
-    display: inline-block;
+	display: inline-block;
 }
 
 .navbar_list .navbar_item a {
-	/* justify-content: flex-end; */
-    text-decoration: none;
-    padding: 1rem;
-   	color: #fff;
-    font-weight: 700;
+	text-decoration: none;
+	padding: 1rem;
+	color: #fff;
+	font-weight: 700;
 	display: flex;
 }

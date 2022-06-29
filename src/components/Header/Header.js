@@ -18,26 +18,29 @@ const Header = (props) => {
 
 	return (
 		<>
-			<div style={{}} className={classes.header}>
+			<div className={classes.header}>
 				<img
-					alt="SOMETHING IS EVERYTHING"
+					alt="SOMETING IS EVERYTHING"
 					style={{
 						display: 'block',
 						height: '60px',
 						maxWidth: '310px',
 						paddingLeft: '2rem',
 						justifyContent: 'flex-start',
-						
 					}}
 					src={Something}
+					className="float-left"
 				></img>
-					<nav className={classes.navbar}>
-						<ul className={classes.navbar_list}>
-							<li className={classes.navbar_item}><a href="/">HOME</a></li>
-							<li className={classes.navbar_item}><a href="/about">ABOUT</a></li>
-						</ul>
-					</nav>
-					
+				<nav className={classes.navbar}>
+					<ul className={classes.navbar_list}>
+						<li className={classes.navbar_item}>
+							<a href="/">HOME</a>
+						</li>
+						<li className={classes.navbar_item}>
+							<a href="/about">ABOUT</a>
+						</li>
+					</ul>
+
 					{!isAuth && (
 						<HeaderButton
 							onClickLoginButton={props.onShowLoginForm}
@@ -52,6 +55,7 @@ const Header = (props) => {
 							Logout
 						</button>
 					)}
+				</nav>
 			</div>
 			<Carousel />
 		</>
