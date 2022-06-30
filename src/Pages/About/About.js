@@ -18,16 +18,12 @@ const About = () => {
 						</div>
 						<div className="content">
 							<h2>
-								Lorem ipsum dolor sit amet, consectetur
-								adipisicing
+								Mari mengenal apa itu someting !
 							</h2>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur
-								adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna
-								aliqua. Ut enim ad minim veniam, quis
-								nostrud exercitation ullamco laboris
-								nisi ut aliquip ex ea commodo consequat.
+							Hai Fams, kami membangun sebuah website sistem informasi untuk menyelesaikan keresahan yang dialami para orang tua ataupun calon orang tua. Website apakah ituu?? Ya, Someting membantu pasangan suami istri yang ingin mempunyai anak dan ibu yang sedang hamil untuk terhindar dari Stunting.
+
+Banyak fitur yang kami punya ,dari fitur mengenai informasi stunting, gizi, MPASI, dan presentasi data balita yang mengalami stunting.
 							</p>
 						</div>
 					</div>
@@ -40,7 +36,7 @@ const About = () => {
 				<div className="container-team">
 					<div className="row">
 						<div className="title-team">
-							<h3>Our Team</h3>
+							<h3>Siapakah kami?</h3>
 						</div>
 					</div>
 
