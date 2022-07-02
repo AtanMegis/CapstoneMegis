@@ -1,7 +1,8 @@
 import React from 'react';
 import classes from './NewsItem.module.css';
+import { Link } from 'react-router-dom';
 
-const NewsItem = ({ title, description, url, urlToImage }) => {
+const NewsItem = ({ title, description, urlToImage, id }) => {
 	return (
 		<div className="main-wrapper">
 			<div className="main-container">
@@ -15,7 +16,7 @@ const NewsItem = ({ title, description, url, urlToImage }) => {
 					</div>
 					<div>
 						<h3>
-							<a href={url}>{title}</a>
+							<Link to={`/berita/${id}`}>{title}</Link>
 						</h3>
 						<p>{description}</p>
 					</div>

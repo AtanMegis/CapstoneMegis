@@ -7,16 +7,14 @@ import { auth } from '@config/firebase/firebase';
 
 const login = async (passwordValue, emailValue, callback) => {
 	try {
-		const user = await signInWithEmailAndPassword(
+		const response = await signInWithEmailAndPassword(
 			auth,
 			emailValue,
 			passwordValue
-		).then((userCredential) => {
-			console.log(userCredential.user);
-		});
-		callback(user);
+		);
+		callback({ payload: response.user, success: true });
 	} catch (error) {
-		console.log(error.message || 'Something went wrong !');
+		callback({ payload: error.message, success: false });
 	}
 };
 
@@ -27,20 +25,16 @@ const register = async (
 	callback
 ) => {
 	try {
-		const user = await createUserWithEmailAndPassword(
+		const response = await createUserWithEmailAndPassword(
 			auth,
 			emailValue,
 			passwordValue,
 			passwordConfValue
-		).then((response) => {
-			sendEmailVerification();
-			// getIdToken();
-			console.log(response, 'mohon verifikasi email anda !');
-		});
-		console.log('user Sign Up :', user);
-		callback(user);
+		);
+		callback({ payload: response.user, success: true });
+		sendEmailVerification();
 	} catch (error) {
-		console.log(error);
+		callback({ payload: error.message, success: false });
 	}
 };
 

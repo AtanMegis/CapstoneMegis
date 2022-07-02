@@ -1,13 +1,12 @@
 .footer {
-	display: flex;
+	display: block;
 	padding: 30px 30px 20px 30px;
 	color: #ffff;
 	background-color: #00525f;
 	border-top: 2px solid #023d46;
 	font-weight: 700;
-	flex-wrap: wrap;
-	/*display: fixed;
-    position: fixed;*/
+	/* display: fixed;
+	position: fixed; */
 	width: 100%;
 }
 

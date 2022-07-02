@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Something from '@assets/Something.png';
 import { authActions } from '@config/redux/reducers/auth';
 import Carousel from './Carousel/Carousel';
@@ -10,11 +10,15 @@ import classesButton from './HeaderButton.module.css';
 const Header = (props) => {
 	const dispatch = useDispatch();
 	const isAuth = useSelector((state) => state.auth.isAuthenticated);
-	const user = useSelector((state) => state.auth.user);
+	const userEmail = useSelector((state) => state.auth.user?.email);
 
 	const logoutHandler = () => {
 		dispatch(authActions.logout());
 	};
+
+	useEffect(() => {
+		localStorage.getItem('USER_TOKEN');
+	}, []);
 
 	return (
 		<>
@@ -46,7 +50,7 @@ const Header = (props) => {
 							onClickLoginButton={props.onShowLoginForm}
 						/>
 					)}
-					{isAuth && <div>Selamat Datang, {user}</div>}
+					{isAuth && <div>Selamat Datang, {userEmail} </div>}
 					{isAuth && (
 						<button
 							className={classesButton.button}

@@ -9,13 +9,13 @@ let carouselImage = [
 		urls: carousel1,
 	},
 	{
-		title: 'Gift',
-		description: 'Stunting is ....',
+		title: 'The biggest gift',
+		description: 'One of beatiful creatures',
 		urls: carousel2,
 	},
 	{
-		title: 'Third Slide Image',
-		description: 'Stunting is ....',
+		title: 'Unconditionally being loved',
+		description: 'Precious treasure ever',
 		urls: carousel3,
 	},
 ];
