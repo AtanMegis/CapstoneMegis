@@ -12,7 +12,7 @@
 			"alias": {
 				"map": [
 					["@component", "./src/component"],
-					["@pages", "./src/pages"],
+					["@halaman", "./src/halaman"],
 					["@hooks", "./src/hooks"],
 					["@config", "./src/config"],
 					["@services", "./src/serveces"],

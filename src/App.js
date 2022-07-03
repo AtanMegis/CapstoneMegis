@@ -7,11 +7,13 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Stunting from '@components/Content/Stunting/Stunting';
 import NewsList from '@components/Content/News/NewsList';
 import GiziList from '@components/Content/Gizi/GiziList';
-import NotFound from '@pages/NotFound/NotFound';
-import About from '@pages/About/About';
+import NotFound from '@halaman/NotFound/NotFound';
+import About from '@halaman/About/About';
 import MpasiList from '@components/Content/Mpasi/MpasiList';
-import Home from '@pages/Home/Home';
-import { Templates } from './components/Templates/Templates';
+import Home from '@halaman/Home/Home';
+import { TemplateDetailNews } from './components/Templates/TemplateDetailNews';
+import { TemplateDetailGizi } from './components/Templates/TemplateDetailGizi';
+import { TemplateDetailMpasi } from './components/Templates/TemplateDetailMpasi';
 
 function App() {
 	const [LoginIsShown, setLoginIsShown] = useState(false);
@@ -45,13 +47,19 @@ function App() {
 					<NewsList />
 				</Route>
 				<Route path="/berita/:id">
-					<Templates />
+					<TemplateDetailNews />
 				</Route>
-				<Route path="/informasigizi">
+				<Route path="/gizi" exact>
 					<GiziList />
 				</Route>
-				<Route path="/mpasi">
+				<Route path="/gizi/:id">
+					<TemplateDetailGizi />
+				</Route>
+				<Route path="/mpasi" exact>
 					<MpasiList />
+				</Route>
+				<Route path="/mpasi/:id">
+					<TemplateDetailMpasi />
 				</Route>
 				<Route path="*">
 					<NotFound />

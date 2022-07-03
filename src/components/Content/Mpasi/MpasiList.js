@@ -2,34 +2,91 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MpasiItem from './MpasiItem';
 import mockapi from 'src/lib/mockapi';
+import LoadingSpinner from '@components/UI/LoadingSpinner';
+import ErrorModal from '../../UI/ErrorModal';
 
 const MpasiList = () => {
-	const [mpasi, setMpasi] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
+	const [errorMsg, setErrorMsg] = useState(null);
+	const [articles, setArticles] = useState([]);
 
 	useEffect(() => {
-		const getMpasi = async () => {
-			const response = await axios.get(`${mockapi}/mpasi`);
-			setMpasi(response.data);
+		setIsLoading(true);
+		const getArticles = async () => {
+			try {
+				const response = await axios.get(`${mockapi}/mpasi`);
+				setArticles(response.data);
+				setIsLoading(false);
+			} catch (error) {
+				setErrorMsg(error.message);
+			}
 		};
-		getMpasi();
+		getArticles();
 	}, []);
 
-	return (
-		<div className={{}}>
-			<h1 style={{ fontSize: '50px' }}>Resep MPASI</h1>
-			<hr />
+	const handleCloseModal = () => {
+		setErrorMsg(false);
+	};
 
-			{mpasi.map((data) => (
-				<MpasiItem
-					key={data.id}
-					id={data.id}
-					title={data.title}
-					description={data.description}
-					url={data.url}
-					urlToImage={data.urlToImage}
-				/>
-			))}
+	return (
+		<div>
+			{errorMsg && (
+				<div>
+					<ErrorModal onClose={handleCloseModal}>
+						{errorMsg}
+					</ErrorModal>
+				</div>
+			)}
+			<div className={{}}>
+				<h1 style={{ fontSize: '50px' }}>Resep MPASI</h1>
+				<hr />
+				{isLoading && (
+					<div className="centered">
+						<LoadingSpinner />
+					</div>
+				)}
+				{articles.map((data) => (
+					<MpasiItem
+						key={data.id}
+						id={data.id}
+						title={data.title}
+						description={data.description}
+						url={data.url}
+						urlToImage={data.urlToImage}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };
+
+// const MpasiList = () => {
+// 	const [mpasi, setMpasi] = useState([]);
+
+// 	useEffect(() => {
+// 		const getMpasi = async () => {
+// 			const response = await axios.get(`${mockapi}/mpasi`);
+// 			setMpasi(response.data);
+// 		};
+// 		getMpasi();
+// 	}, []);
+
+// 	return (
+// 		<div className={{}}>
+// 			<h1 style={{ fontSize: '50px' }}>Resep MPASI</h1>
+// 			<hr />
+
+// 			{mpasi.map((data) => (
+// 				<MpasiItem
+// 					key={data.id}
+// 					id={data.id}
+// 					title={data.title}
+// 					description={data.description}
+// 					url={data.url}
+// 					urlToImage={data.urlToImage}
+// 				/>
+// 			))}
+// 		</div>
+// 	);
+// };
 export default MpasiList;

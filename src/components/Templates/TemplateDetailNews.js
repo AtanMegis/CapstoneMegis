@@ -2,23 +2,24 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import mockapi from '../../lib/mockapi';
 import { useParams } from 'react-router-dom';
+import './Templates.css';
 
-export const Templates = () => {
+export const TemplateDetailNews = () => {
 	const params = useParams();
 
-	const [templates, setTemplates] = useState(null);
+	const [templates, setTemplateDetailNews] = useState(null);
 	useEffect(() => {
-		const getTemplates = async () => {
+		const getTemplateDetailNews = async () => {
 			try {
 				const response = await axios.get(
 					`${mockapi}/berita/${params.id}`
 				);
-				setTemplates(response.data);
+				setTemplateDetailNews(response.data);
 			} catch (error) {
 				console.log(error);
 			}
 		};
-		getTemplates();
+		getTemplateDetailNews();
 	}, []);
 
 	return (
@@ -31,7 +32,7 @@ export const Templates = () => {
 						src={templates.urlToImage}
 						alt=""
 					/>
-					<p className="content-detail">{templates.content}</p>
+					<p style={{whiteSpace: 'pre-line'}}className="content-detail">{templates.description}</p>
 				</div>
 			)}
 		</div>

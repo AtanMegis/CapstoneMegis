@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const MpasiItem = ({ title, urlToImage, description }) => {
+const MpasiItem = ({ title, urlToImage, description, id }) => {
 	return (
 		<>
 			<div className="main-container">
@@ -14,7 +15,7 @@ const MpasiItem = ({ title, urlToImage, description }) => {
 					</div>
 					<div>
 						<h3>
-							<p>{title}</p>
+							<Link to={`/mpasi/${id}`}>{title}</Link>
 						</h3>
 						<p>{description}</p>
 					</div>

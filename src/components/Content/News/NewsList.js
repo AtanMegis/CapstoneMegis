@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import classes from './NewsList.module.css';
 import LoadingSpinner from '@components/UI/LoadingSpinner';
-
 import NewsItem from './NewsItem';
 import ErrorModal from '../../UI/ErrorModal';
 import mockapi from 'src/lib/mockapi';

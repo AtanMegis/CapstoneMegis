@@ -21,9 +21,7 @@ const About = () => {
 								Mari mengenal apa itu someting !
 							</h2>
 							<p>
-							Hai Fams, kami membangun sebuah website sistem informasi untuk menyelesaikan keresahan yang dialami para orang tua ataupun calon orang tua. Website apakah ituu?? Ya, Someting membantu pasangan suami istri yang ingin mempunyai anak dan ibu yang sedang hamil untuk terhindar dari Stunting.
-
-Banyak fitur yang kami punya ,dari fitur mengenai informasi stunting, gizi, MPASI, dan presentasi data balita yang mengalami stunting.
+								Hai Fams, kami membangun sebuah website sistem informasi untuk menyelesaikan keresahan yang dialami para orang tua ataupun calon orang tua. Website apakah ituu?? Ya, Someting membantu pasangan suami istri yang ingin mempunyai anak dan ibu yang sedang hamil untuk terhindar dari Stunting. Banyak fitur yang kami punya, dari fitur mengenai informasi stunting, gizi, MPASI, dan presentasi data balita yang mengalami stunting.
 							</p>
 						</div>
 					</div>
