@@ -43,6 +43,8 @@ const Stunting = () => {
 						di usia-usia produktif.
 					</p>
 				</div>
+			</div>
+			<div className={classes['new-paragraph']}>
 				<section>
 					<h3>Kondisi Stunting di indonesia</h3>
 					<p>

@@ -22,16 +22,21 @@ export const TemplateDetailGizi = () => {
 	}, []);
 
 	return (
-		<div className="row-detail">
+		<div className="flex flex-wrap pt-4 pb-8">
 			{templates && (
-				<div className="content-detail">
-					<h3 className="item-title">{templates.title}</h3>
+				<div className="px-40">
+					<h3 className="py-8">{templates.title}</h3>
 					<img
-						className="image"
+						className="w-full max-h-96 object-cover rounded-lg"
 						src={templates.urlToImage}
 						alt=""
 					/>
-					<p style={{whiteSpace: 'pre-line'}} className="content-detail">{templates.description}</p>
+					<p
+						style={{ whiteSpace: 'pre-line' }}
+						className="text-justify py-8"
+					>
+						{templates.description}
+					</p>
 				</div>
 			)}
 		</div>

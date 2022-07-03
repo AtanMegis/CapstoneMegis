@@ -4,7 +4,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@hooks/": ["src/hooks/"],
-			"@halaman/": ["src/halaman/"],
+			"@pages/": ["src/pages/"],
 			"@services/": ["src/services/"],
 			"@config/": ["src/config/"],
 			"@assets/": ["src/assets/"],

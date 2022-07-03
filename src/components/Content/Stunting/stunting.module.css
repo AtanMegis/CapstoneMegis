@@ -1,6 +1,6 @@
 .wrapper {
 	display: block;
-	padding: 2rem 5rem;
+	padding: 2rem 15rem;
 }
 
 .content-main {
@@ -12,9 +12,13 @@
 }
 
 .img-container {
-	height: 200px;
-	display: flex;
+	height: 300px;
+	display: inline-flex;
 	gap: 1rem;
+}
+.new-paragraph {
+	padding-top: 10rem;
+	display: block;
 }
 
 p {

@@ -4,6 +4,7 @@ import MpasiItem from './MpasiItem';
 import mockapi from 'src/lib/mockapi';
 import LoadingSpinner from '@components/UI/LoadingSpinner';
 import ErrorModal from '../../UI/ErrorModal';
+import classes from './MpasiList.module.css';
 
 const MpasiList = () => {
 	const [isLoading, setIsLoading] = useState(false);
@@ -37,24 +38,26 @@ const MpasiList = () => {
 					</ErrorModal>
 				</div>
 			)}
-			<div className={{}}>
-				<h1 style={{ fontSize: '50px' }}>Resep MPASI</h1>
+			<div className={classes['font-title']}>
+				<h1>Makanan Pendamping ASI</h1>
 				<hr />
-				{isLoading && (
-					<div className="centered">
-						<LoadingSpinner />
-					</div>
-				)}
-				{articles.map((data) => (
-					<MpasiItem
-						key={data.id}
-						id={data.id}
-						title={data.title}
-						description={data.description}
-						url={data.url}
-						urlToImage={data.urlToImage}
-					/>
-				))}
+				<div className={classes['wrapper']}>
+					{isLoading && (
+						<div className="centered">
+							<LoadingSpinner />
+						</div>
+					)}
+					{articles.map((data) => (
+						<MpasiItem
+							key={data.id}
+							id={data.id}
+							title={data.title}
+							description={data.description}
+							url={data.url}
+							urlToImage={data.urlToImage}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
 	);

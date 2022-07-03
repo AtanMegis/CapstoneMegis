@@ -38,24 +38,26 @@ const GiziList = () => {
 					</ErrorModal>
 				</div>
 			)}
-			<div className={classes['wrapper']}>
+			<div className={classes['font-title']}>
 				<h1>Informasi Gizi</h1>
 				<hr />
-				{isLoading && (
-					<div className="centered">
-						<LoadingSpinner />
-					</div>
-				)}
-				{articles.map((data) => (
-					<GiziItem
-						key={data.id}
-						id={data.id}
-						title={data.title}
-						description={data.description}
-						url={data.url}
-						urlToImage={data.urlToImage}
-					/>
-				))}
+				<div className={classes['wrapper']}>
+					{isLoading && (
+						<div className="centered">
+							<LoadingSpinner />
+						</div>
+					)}
+					{articles.map((data) => (
+						<GiziItem
+							key={data.id}
+							id={data.id}
+							title={data.title}
+							description={data.description}
+							url={data.url}
+							urlToImage={data.urlToImage}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
 	);
