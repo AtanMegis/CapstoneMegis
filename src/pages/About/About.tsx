@@ -17,11 +17,20 @@ const About = () => {
 							<h1>Tentang Kami</h1>
 						</div>
 						<div className="content">
-							<h2>
-								Mari mengenal apa itu someting !
-							</h2>
+							<h2>Mari mengenal apa itu someting !</h2>
 							<p>
-								Hai Fams, kami membangun sebuah website sistem informasi untuk menyelesaikan keresahan yang dialami para orang tua ataupun calon orang tua. Website apakah ituu?? Ya, Someting membantu pasangan suami istri yang ingin mempunyai anak dan ibu yang sedang hamil untuk terhindar dari Stunting. Banyak fitur yang kami punya, dari fitur mengenai informasi stunting, gizi, MPASI, dan presentasi data balita yang mengalami stunting.
+								Hai Fams, kami membangun sebuah website
+								sistem informasi untuk menyelesaikan
+								keresahan yang dialami para orang tua
+								ataupun calon orang tua. Website apakah
+								ituu?? Ya, Someting membantu pasangan
+								suami istri yang ingin mempunyai anak
+								dan ibu yang sedang hamil untuk
+								terhindar dari Stunting. Banyak fitur
+								yang kami punya, dari fitur mengenai
+								informasi stunting, gizi, MPASI, dan
+								presentasi data balita yang mengalami
+								stunting.
 							</p>
 						</div>
 					</div>
@@ -46,6 +55,7 @@ const About = () => {
 							<div className="content">
 								<h4 className="name">THORIQ</h4>
 								<a
+									aria-label="Babang Thoriq"
 									className="button"
 									href="https://www.linkedin.com/in/thoriq-ilhami-zaidan-6ab628224/"
 									target="_blank"

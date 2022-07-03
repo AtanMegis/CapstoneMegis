@@ -48,6 +48,7 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 					onClose();
 				} else {
 					setErrorMsg(response.payload);
+					console.log({ response });
 				}
 			});
 		}

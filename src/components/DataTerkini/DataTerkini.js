@@ -8,7 +8,7 @@ const DataTerkini = () => {
 				<div className="container-data">
 					<div className="row">
 						<div className="title-data">
-							<h3>
+							<h3 aria-label="Heading Data">
 								Presentasi Data Balita Kekurangan gizi
 								provinsi Jakarta
 							</h3>

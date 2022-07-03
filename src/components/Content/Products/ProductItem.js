@@ -10,9 +10,7 @@ const ProductItem = ({ title, url, to, body }) => {
 				<img src={url} alt={url} />
 			</div>
 			<div className={classes['card-title']}>
-				<h3>
-					<a href={url}>{title}</a>
-				</h3>
+				<h3>{title}</h3>
 			</div>
 			<div className={classes['card-body']}>
 				<p>{body}</p>

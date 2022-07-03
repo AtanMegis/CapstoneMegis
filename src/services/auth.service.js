@@ -15,6 +15,7 @@ const login = async (passwordValue, emailValue, callback) => {
 		callback({ payload: response.user, success: true });
 	} catch (error) {
 		callback({ payload: error.message, success: false });
+		console.log({ error });
 	}
 };
 

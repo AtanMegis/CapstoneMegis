@@ -24,6 +24,7 @@ const Header = (props) => {
 		<>
 			<div className={classes.header}>
 				<img
+					id="Logo"
 					alt="SOMETING IS EVERYTHING"
 					style={{
 						display: 'block',
