@@ -1,11 +1,13 @@
 import React from 'react';
-import Team from '@assets/team.svg';
-import Muti from '@assets/muti.jpeg';
-import Selvia from '@assets/selvia.png';
-import Megis from '@assets/megis.jpeg';
-import Thoriq from '@assets/thoriqq.jpeg';
-import Vaia from '@assets/vaia.jpg';
+import Team from '../../assets/team.svg';
+import Muti from '../../assets/muti.jpeg';
+import Selvia from '../../assets/selvia.png';
+import Megis from '../../assets/megis.jpeg';
+import Thoriq from '../../assets/thoriqq.jpeg';
+import Vaia from '../../assets/vaia.jpg';
 import './About.css';
+
+interface About {}
 
 const About = () => {
 	return (

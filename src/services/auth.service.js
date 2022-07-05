@@ -3,7 +3,7 @@ import {
 	createUserWithEmailAndPassword,
 	sendEmailVerification,
 } from 'firebase/auth';
-import { auth } from '@config/firebase/firebase';
+import { auth } from '../config/firebase/firebase';
 
 const login = async (passwordValue, emailValue, callback) => {
 	try {
@@ -15,7 +15,6 @@ const login = async (passwordValue, emailValue, callback) => {
 		callback({ payload: response.user, success: true });
 	} catch (error) {
 		callback({ payload: error.message, success: false });
-		console.log({ error });
 	}
 };
 

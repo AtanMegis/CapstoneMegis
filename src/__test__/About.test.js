@@ -2,16 +2,13 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import About from '../pages/About/About';
 
-describe('check tag <a>', () => {
-	it('should have tag thoriq ', () => {
+describe('about us', () => {
+	it('should render link thoriq', () => {
 		render(<About />);
-		let href = screen.getByLabelText('Babang Thoriq');
-		expect(
-			href
-				.getAttributeNode('href')
-				.isEqualNode(
-					'https://www.linkedin.com/in/thoriq-ilhami-zaidan-6ab628224/'
-				)
+		const link = screen.getByLabelText(/Babang Thoriq/i);
+		expect(link).toHaveProperty(
+			'href',
+			'https://www.linkedin.com/in/thoriq-ilhami-zaidan-6ab628224/'
 		);
 	});
 });
