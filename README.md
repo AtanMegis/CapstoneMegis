@@ -11,7 +11,7 @@ An informative website about education, prevention efforts, and treatment for to
 * [Typescript](https://www.typescriptlang.org/)
 * [Axios](https://www.npmjs.com/package/react-axios)
 * [Firebase](https://firebase.google.com/)
-* [mockAPI](https://mockapi.io/)o
+* [mockAPI](https://mockapi.io/)
 * [Postman](https://www.postman.cm/)
 
 ## Getting Started
