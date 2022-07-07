@@ -5,7 +5,7 @@ import './RegisterForm.css';
 import { useDispatch } from 'react-redux';
 import { SERVICE_AUTH } from '@services/auth.service';
 import { authActions } from '@config/redux/reducers/auth';
-import ErrorModal from '../../UI/ErrorModal';
+import ErrorModal from '@components/UI/ErrorModal';
 
 const RegisterForm = ({ onchangeAuthPage, onClose }) => {
 	const [errorMsg, setErrorMsg] = useState(null);

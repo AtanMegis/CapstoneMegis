@@ -5,13 +5,13 @@ const NewsItem = ({ title, description, urlToImage, id }) => {
 	return (
 		<div className="max-w-xs bg-white rounded-lg border border-gray-200 shadow-md hover:scale-105 transition duration-150 ease-out hover:ease-in">
 			<Link to={`/berita/${id}`}>
-				<a href="#">
+				<div>
 					<img
 						className="rounded-t-lg h-48 w-full object-cover"
 						src={urlToImage}
 						alt={urlToImage}
 					/>
-				</a>
+				</div>
 				<div className="p-5 flex flex-wrap">
 					<h5 className="mb-2 text-2xl font-bold tracking-tight  dark:text-gray-600">
 						{title}

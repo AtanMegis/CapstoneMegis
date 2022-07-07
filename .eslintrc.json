@@ -11,7 +11,7 @@
 			},
 			"alias": {
 				"map": [
-					["@component", "./src/component"],
+					["@components", "./src/components"],
 					["@pages", "./src/pages"],
 					["@hooks", "./src/hooks"],
 					["@config", "./src/config"],

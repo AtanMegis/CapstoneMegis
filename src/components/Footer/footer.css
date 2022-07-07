@@ -5,14 +5,12 @@
 	background-color: #00525f;
 	border-top: 2px solid #023d46;
 	font-weight: 700;
-	/* display: fixed;
-	position: fixed; */
+
 	width: 100%;
 }
 
 .footer > * {
 	flex: 1 100%;
-	/*display: fixed;*/
 }
 
 .footer-address {

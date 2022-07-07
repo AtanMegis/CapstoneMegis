@@ -3,7 +3,7 @@ import axios from 'axios';
 import classes from './NewsList.module.css';
 import LoadingSpinner from '@components/UI/LoadingSpinner';
 import NewsItem from './NewsItem';
-import ErrorModal from '../../UI/ErrorModal';
+import ErrorModal from '@components/UI/ErrorModal';
 import mockapi from 'src/lib/mockapi';
 
 const NewsList = () => {

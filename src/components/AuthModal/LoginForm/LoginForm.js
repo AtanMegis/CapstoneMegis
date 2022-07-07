@@ -5,13 +5,10 @@ import './LoginForm.css';
 import { useDispatch } from 'react-redux';
 import { authActions } from '@config/redux/reducers/auth';
 import { SERVICE_AUTH } from '@services/auth.service';
-import ErrorModal from '../../UI/ErrorModal';
-// import LoadingSpinner from '../../UI/LoadingSpinner';
+import ErrorModal from '@components/UI/ErrorModal';
 
 const LoginForm = ({ onchangeAuthPage, onClose }) => {
-	// const [showPassword, setShowPassword] = useState(false);
 	const [errorMsg, setErrorMsg] = useState(null);
-	// const [isLoading, setIsLoading] = useState(false);
 	const dispatch = useDispatch();
 	const isNotEmpty = (value) => value.trim() !== '';
 	const isEmail = (value) => value.includes('@');
@@ -63,9 +60,6 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 		? 'form-control invalid'
 		: 'form-control';
 
-	// const togglePassword = () => {
-	// 	setShowPassword(!showPassword);
-	// };
 	const errorHandler = () => {
 		setErrorMsg(false);
 	};
@@ -108,7 +102,6 @@ const LoginForm = ({ onchangeAuthPage, onClose }) => {
 					<div className={passwordClasses}>
 						<label htmlFor="name">Password</label>
 						<input
-							// type={showPassword ? 'text' : 'password'}
 							type="password"
 							id="password"
 							autoComplete="on"
