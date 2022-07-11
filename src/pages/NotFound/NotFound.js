@@ -9,11 +9,9 @@ const NotFound = () => {
 	return (
 		<div className={classes.centered}>
 			<img src={logoNotFound} />
+			<div data-testid="location-display">{location.pathname}</div>
 			<div>
 				<h1>PAGE NOT FOUND !!</h1>
-				<div data-testid="location-display">
-					{location.pathname}
-				</div>
 			</div>
 		</div>
 	);

@@ -1,7 +1,6 @@
 import {
 	signInWithEmailAndPassword,
 	createUserWithEmailAndPassword,
-	sendEmailVerification,
 } from 'firebase/auth';
 import { auth } from '../config/firebase/firebase';
 
@@ -32,7 +31,6 @@ const register = async (
 			passwordConfValue
 		);
 		callback({ payload: response.user, success: true });
-		sendEmailVerification();
 	} catch (error) {
 		callback({ payload: error.message, success: false });
 	}
