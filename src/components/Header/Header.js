@@ -39,6 +39,13 @@ const Header = (props) => {
 				<nav className={classes.navbar}>
 					<ul className={classes.navbar_list}>
 						<li className={classes.navbar_item}>
+							{isAuth && (
+								<p className={'text-white'}>
+									Selamat Datang, {userEmail}{' '}
+								</p>
+							)}
+						</li>
+						<li className={classes.navbar_item}>
 							<a href="/">HOME</a>
 						</li>
 						<li className={classes.navbar_item}>
@@ -51,7 +58,7 @@ const Header = (props) => {
 							onClickLoginButton={props.onShowLoginForm}
 						/>
 					)}
-					{isAuth && <div>Selamat Datang, {userEmail} </div>}
+
 					{isAuth && (
 						<button
 							className={classesButton.button}
