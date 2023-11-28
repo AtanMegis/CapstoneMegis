@@ -18,7 +18,7 @@ const NewsItem = ({ title, description, urlToImage, id }) => {
 					</h5>
 
 					<p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-						{description.length > 150
+						{description?.length > 150
 							? `${description.substring(0, 150)}...`
 							: description}
 					</p>

@@ -23,7 +23,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://i.postimg.cc/wBm80vV0/baby-boy-icon-3.png"
+									src="https://cdn.pixabay.com/photo/2019/04/17/05/21/hijab-4133360__340.png"
 									alt=""
 								/>
 							</div>
@@ -41,7 +41,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://i.postimg.cc/HL9wX0Mm/baby-crying-icon.png"
+									src="https://cdn.pixabay.com/photo/2019/06/19/06/53/cartoon-4284092__340.png"
 									alt=""
 								/>
 							</div>
@@ -59,7 +59,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://i.postimg.cc/HsFC5X0V/baby2.png"
+									src="https://cdn.pixabay.com/photo/2019/06/19/05/13/hijab-4283954__340.png"
 									alt=""
 								/>
 							</div>
@@ -77,7 +77,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://i.postimg.cc/JnCF4QLW/baby-laughing-icon.png"
+									src="https://cdn.pixabay.com/photo/2018/02/16/01/50/robot-3156763__340.png"
 									alt=""
 								/>
 							</div>
@@ -95,7 +95,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://i.postimg.cc/fTzVp41x/baby.png"
+									src="https://cdn.pixabay.com/photo/2017/07/20/09/02/kite-2521627__340.png"
 									alt=""
 								/>
 							</div>
@@ -113,7 +113,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://i.postimg.cc/rwh1JBNp/baby-vomit-icon.png"
+									src="https://cdn.pixabay.com/photo/2020/03/12/09/23/hero-4924493__340.png"
 									alt=""
 								/>
 							</div>

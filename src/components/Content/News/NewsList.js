@@ -52,10 +52,10 @@ const NewsList = () => {
 						<NewsItem
 							key={data.id}
 							id={data.id}
-							title={data.title}
-							description={data.description}
-							url={data.url}
-							urlToImage={data.urlToImage}
+							title={data?.title}
+							description={data?.description}
+							url={data?.url}
+							urlToImage={data?.urlToImage}
 						/>
 					))}
 				</div>
