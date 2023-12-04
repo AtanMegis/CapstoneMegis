@@ -23,7 +23,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://cdn.pixabay.com/photo/2019/04/17/05/21/hijab-4133360__340.png"
+									src="https://images.pexels.com/photos/459957/pexels-photo-459957.jpeg?auto=compress&cs=tinysrgb&w=1600"
 									alt=""
 								/>
 							</div>
@@ -41,7 +41,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://cdn.pixabay.com/photo/2019/06/19/06/53/cartoon-4284092__340.png"
+									src="https://images.pexels.com/photos/266004/pexels-photo-266004.jpeg?auto=compress&cs=tinysrgb&w=1600"
 									alt=""
 								/>
 							</div>
@@ -59,7 +59,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://cdn.pixabay.com/photo/2019/06/19/05/13/hijab-4283954__340.png"
+									src="https://images.pexels.com/photos/421884/pexels-photo-421884.jpeg?auto=compress&cs=tinysrgb&w=1600"
 									alt=""
 								/>
 							</div>
@@ -77,7 +77,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://cdn.pixabay.com/photo/2018/02/16/01/50/robot-3156763__340.png"
+									src="https://images.pexels.com/photos/159767/baby-cute-moe-brilliant-159767.jpeg?auto=compress&cs=tinysrgb&w=1600"
 									alt=""
 								/>
 							</div>
@@ -95,7 +95,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://cdn.pixabay.com/photo/2017/07/20/09/02/kite-2521627__340.png"
+									src="https://images.pexels.com/photos/1648374/pexels-photo-1648374.jpeg?auto=compress&cs=tinysrgb&w=1600"
 									alt=""
 								/>
 							</div>
@@ -113,7 +113,7 @@ const DataTerkini = () => {
 						<div className="card">
 							<div className="avatar">
 								<img
-									src="https://cdn.pixabay.com/photo/2020/03/12/09/23/hero-4924493__340.png"
+									src="https://images.pexels.com/photos/2869318/pexels-photo-2869318.jpeg?auto=compress&cs=tinysrgb&w=1600"
 									alt=""
 								/>
 							</div>
